@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import MusicPlayer from "@/components/MusicPlayer";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const cormorant = Cormorant_Garamond({ 
@@ -27,6 +28,7 @@ export default function RootLayout({
         <main className="flex-grow">
           {children}
         </main>
+        <MusicPlayer />
         <footer className="py-12 text-center border-t border-[#e5e1d8] bg-[#f9f7f2]">
           <div className="max-w-7xl mx-auto px-4">
             <p className="font-serif italic text-xl mb-2 text-[#5a5a40]">"Whenever there is a decline in righteousness, I manifest Myself..."</p>
