@@ -52,5 +52,401 @@
     "english": "It is far better to discharge one’s own prescribed duties, even though faultily, than another’s duties perfectly. Destruction in the course of performing one’s own duty is better than engaging in another’s duties, for to follow another’s path is dangerous.",
     "meaning": "Be true to yourself. Do not try to be someone else or follow a path that isn't yours.",
     "tags": ["identity", "career", "purpose", "comparison", "authenticity"]
+  },
+  {
+    "chapter": 4,
+    "shlok": 7,
+    "sanskrit": "यदा यदा हि धर्मस्य ग्लानिर्भवति भारत | अभ्युत्थानमधर्मस्य तदात्मानं सृजाम्यहम् ||",
+    "hindi": "हे भारत! जब-जब धर्म की हानि और अधर्म की वृद्धि होती है, तब-तब मैं अपने आप को प्रकट करता हूँ।",
+    "english": "Whenever and wherever there is a decline in religious practice, O descendant of Bharata, and a predominant rise of irreligion—at that time I descend Myself.",
+    "meaning": "Divine intervention occurs when evil prevails. Hope is never lost.",
+    "tags": ["hope", "evil", "justice", "god", "protection"]
+  },
+  {
+    "chapter": 9,
+    "shlok": 22,
+    "sanskrit": "अनन्याश्चिन्तयन्तो मां ये जनाः पर्युपासते | तेषां नित्याभियुक्तानां योगक्षेमं वहाम्यहम् ||",
+    "hindi": "जो अनन्य प्रेमी भक्तजन मुझ परमेश्वर को निरन्तर चिन्तन करते हुए निष्काम भाव से भजते हैं, उन नित्य एकीभाव से स्थित होने वाले पुरुषों का योगक्षेम मैं स्वयं प्राप्त कर देता हूँ।",
+    "english": "But those who always worship Me with exclusive devotion, meditating on My transcendental form—to them I carry what they lack, and I preserve what they have.",
+    "meaning": "Devotion leads to divine protection and provision.",
+    "tags": ["worry", "security", "faith", "provision", "care"]
+  },
+  {
+    "chapter": 18,
+    "shlok": 61,
+    "sanskrit": "ईश्वरः सर्वभूतानां हृद्देशेऽर्जुन तिष्ठति | भ्रामयन्सर्वभूतानि यन्त्रारूढानि मायया ||",
+    "hindi": "हे अर्जुन! शरीर रूपी यन्त्र में आरूढ़ हुए सम्पूर्ण प्राणियों को अन्तर्यामी परमेश्वर अपनी माया से उनके कर्मों के अनुसार भ्रमण कराता हुआ सब प्राणियों के हृदय में स्थित है।",
+    "english": "The Supreme Lord is situated in everyone's heart, O Arjuna, and is directing the wanderings of all living entities, who are seated as on a machine, made of the material energy.",
+    "meaning": "God resides within us, guiding our journey through material nature.",
+    "tags": ["guidance", "soul", "heart", "control", "destiny"]
+  },
+  {
+    "chapter": 2,
+    "shlok": 20,
+    "sanskrit": "न जायते म्रियते वा कदाचिन् नायं भूत्वा भविता वा न भूयः | अजो नित्यः शाश्वतोऽयं पुराणो न हन्यते हन्यमाने शरीरे ||",
+    "hindi": "यह आत्मा किसी काल में भी न तो जन्मता है और न मरता ही है तथा न यह उत्पन्न होकर फिर होने वाला ही है क्योंकि यह अजन्मा, नित्य, सनातन और पुरातन है, शरीर के मारे जाने पर भी यह नहीं मारा जाता।",
+    "english": "For the soul there is neither birth nor death at any time. He has not come into being, does not come into being, and will not come into being. He is unborn, eternal, ever-existing and primeval. He is not slain when the body is slain.",
+    "meaning": "The soul is immortal. Death is only for the body.",
+    "tags": ["death", "grief", "immortality", "soul", "fear"]
+  },
+  {
+    "chapter": 2,
+    "shlok": 22,
+    "sanskrit": "वासांसि जीर्णानि यथा विहाय नवानि गृह्णाति नरोऽपराणि | तथा शरीराणि विहाय जीर्णान्यन्यानि संयाति नवानि देही ||",
+    "hindi": "जैसे मनुष्य पुराने वस्त्रों को त्यागकर दूसरे नये वस्त्रों को ग्रहण करता है, वैसे ही जीवात्मा पुराने शरीरों को त्यागकर दूसरे नये शरीरों को प्राप्त होता है।",
+    "english": "As a person puts on new garments, giving up old ones, the soul similarly accepts new material bodies, giving up the old and useless ones.",
+    "meaning": "Reincarnation is like changing clothes. Transition is natural.",
+    "tags": ["change", "death", "rebirth", "transition", "body"]
+  },
+  {
+    "chapter": 2,
+    "shlok": 63,
+    "sanskrit": "क्रोधाद्भवति सम्मोहः सम्मोहात्स्मृतिविभ्रमः | स्मृतिभ्रंशाद्बुद्धिनाशो बुद्धिनाशात्प्रणश्यति ||",
+    "hindi": "क्रोध से अत्यन्त मूढ़ भाव उत्पन्न हो जाता है, मूढ़ भाव से स्मृति में भ्रम हो जाता है, स्मृति में भ्रम हो जाने से बुद्धि अर्थात् ज्ञानशक्ति का नाश हो जाता है और बुद्धि का नाश हो जाने से यह पुरुष अपनी स्थिति से गिर जाता है।",
+    "english": "From anger comes complete delusion, and from delusion bewilderment of memory. When memory is bewildered, intelligence is lost, and when intelligence is lost one falls down again into the material pool.",
+    "meaning": "Anger destroys intelligence. Stay calm to stay wise.",
+    "tags": ["anger", "mind", "intelligence", "downfall", "emotions"]
+  },
+  {
+    "chapter": 3,
+    "shlok": 19,
+    "sanskrit": "तस्मादसक्तः सततं कार्यं कर्म समाचर | असक्तो ह्याचरन्कर्म परमाप्नोति पूरुषः ||",
+    "hindi": "इसलिए तू निरन्तर आसक्ति से रहित होकर सदा कर्तव्य कर्म को भलीभाँति करता रह क्योंकि आसक्ति से रहित होकर कर्म करता हुआ मनुष्य परमात्मा को प्राप्त हो जाता है।",
+    "english": "Therefore, without being attached to the fruits of activities, one should act as a matter of duty, for by working without attachment one attains the Supreme.",
+    "meaning": "Perform your duty without attachment to reach the highest state.",
+    "tags": ["duty", "attachment", "success", "work", "spiritual"]
+  },
+  {
+    "chapter": 4,
+    "shlok": 34,
+    "sanskrit": "तद्विद्धि प्रणिपातेन परिप्रश्नेन सेवया | उपदेक्ष्यन्ति ते ज्ञानं ज्ञानिनस्तत्त्वदर्शिनः ||",
+    "hindi": "उस ज्ञान को तू तत्त्वदर्शी ज्ञानियों के पास जाकर समझ, उनको दण्डवत् प्रणाम करने से, उनकी सेवा करने से और कपट छोड़कर सरलतापूर्वक प्रश्न करने से वे परमात्मतत्त्व को जानने वाले ज्ञानी महात्मा तुझे उस तत्त्वज्ञान का उपदेश करेंगे।",
+    "english": "Just try to learn the truth by approaching a spiritual master. Inquire from him submissively and render service unto him. The self-realized souls can impart knowledge unto you because they have seen the truth.",
+    "meaning": "Seek guidance from those who know the truth. Humility is key to learning.",
+    "tags": ["learning", "teacher", "guru", "knowledge", "humility"]
+  },
+  {
+    "chapter": 5,
+    "shlok": 18,
+    "sanskrit": "विद्याविनयसम्पन्ने ब्राह्मणे गवि हस्तिनि | शुनि चैव श्वपाके च पण्डिताः समदर्शिनः ||",
+    "hindi": "वे ज्ञानीजन विद्या और विनययुक्त ब्राह्मण में तथा गौ, हाथी, कुत्ते और चाण्डाल में भी समदर्शी ही होते हैं।",
+    "english": "The humble sages, by virtue of true knowledge, see with equal vision a learned and gentle brahmana, a cow, an elephant, a dog and a dog-eater [outcaste].",
+    "meaning": "True knowledge leads to seeing equality in all living beings.",
+    "tags": ["equality", "vision", "respect", "wisdom", "compassion"]
+  },
+  {
+    "chapter": 6,
+    "shlok": 26,
+    "sanskrit": "यतो यतो निश्चरति मनश्चञ्चलमस्थिरम् | ततस्ततो नियम्यैतदात्मन्येव वशं नयेत् ||",
+    "hindi": "यह स्थिर न रहने वाला और चंचल मन जिस-जिस शब्दादि विषय के निमित्त से संसार में विचरता है, उस-उस विषय से रोककर इसे बार-बार आत्मा में ही निरुद्ध करे।",
+    "english": "From wherever the mind wanders due to its flickering and unsteady nature, one must certainly withdraw it and bring it back under the control of the Self.",
+    "meaning": "Control the wandering mind. Discipline is a constant practice.",
+    "tags": ["focus", "mind control", "meditation", "distraction", "discipline"]
+  },
+  {
+    "chapter": 7,
+    "shlok": 3,
+    "sanskrit": "मनुष्याणां सहस्रेषु कश्चिद्यतति सिद्धये | यततामपि सिद्धानां कश्चिन्मां वेत्ति तत्त्वतः ||",
+    "hindi": "हजारों मनुष्यों में कोई एक मेरी प्राप्ति के लिए यत्न करता है और उन यत्न करने वाले योगियों में भी कोई एक मेरे स्वरूप को तत्त्व से जानता है।",
+    "english": "Out of many thousands among men, one may endeavor for perfection, and of those who have achieved perfection, hardly one knows Me in truth.",
+    "meaning": "The path to perfection is rare and requires great effort.",
+    "tags": ["perfection", "effort", "rarity", "truth", "spiritual"]
+  },
+  {
+    "chapter": 10,
+    "shlok": 41,
+    "sanskrit": "यद्यद्विभूतिमत्सत्त्वं श्रीमदूर्जितमेव वा | तत्तदेवावगच्छ त्वं मम तेजोंऽशसम्भवम् ||",
+    "hindi": "जो-जो भी विभूतियुक्त अर्थात् ऐश्वर्ययुक्त, कान्तियुक्त और शक्तियुक्त वस्तु है, उस-उसको तू मेरे तेज के अंश से ही उत्पन्न हुई जान।",
+    "english": "Know that all opulent, beautiful and glorious creations spring from but a spark of My splendor.",
+    "meaning": "All greatness in the world is a reflection of the Divine.",
+    "tags": ["beauty", "greatness", "splendor", "divine", "inspiration"]
+  },
+  {
+    "chapter": 12,
+    "shlok": 13,
+    "sanskrit": "अद्वेष्टा सर्वभूतानां मैत्रः करुण एव च | निर्ममो निरहङ्कारः समदुःखसुखः क्षमी ||",
+    "hindi": "जो पुरुष सब भूतों में द्वेषभाव से रहित, स्वार्थरहित प्रेमी और दयालु है तथा ममता से रहित, अहङ्कार से रहित, सुख-दुःखों की प्राप्ति में सम और क्षमावान् है।",
+    "english": "One who is not envious but is a kind friend to all living entities, who does not think himself a proprietor and is free from false ego, who is equal in both happiness and distress, who is tolerant.",
+    "meaning": "Qualities of a dear devotee: kindness, humility, and equanimity.",
+    "tags": ["kindness", "ego", "tolerance", "peace", "character"]
+  },
+  {
+    "chapter": 13,
+    "shlok": 27,
+    "sanskrit": "समं सर्वेषु भूतेषु तिष्ठन्तं परमेश्वरम् | विनश्यत्स्वविनश्यन्तं यः पश्यति स पश्यति ||",
+    "hindi": "जो पुरुष नष्ट होते हुए सब चराचर भूतों में परमेश्वर को नाशरहित और समभाव से स्थित देखता है, वही वास्तव में देखता है।",
+    "english": "One who sees the Supreme Lord accompanying the individual soul in all bodies, and who understands that neither the soul nor the Supreme Lord within the destructible body is ever destroyed, actually sees.",
+    "meaning": "See the eternal within the temporary.",
+    "tags": ["vision", "eternal", "truth", "god", "perception"]
+  },
+  {
+    "chapter": 14,
+    "shlok": 5,
+    "sanskrit": "सत्त्वं रजस्तम इति गुणाः प्रकृतिसम्भवाः | निबध्नन्ति महाबाहो देहे देहिनमव्ययम् ||",
+    "hindi": "हे महाबाहो! सत्त्वगुण, रजोगुण और तमोगुण—ये प्रकृति से उत्पन्न तीनों गुण अविनाशी जीवात्मा को शरीर में बाँधते हैं।",
+    "english": "Material nature consists of three modes—goodness, passion and ignorance. When the eternal living entity comes in contact with nature, O mighty-armed Arjuna, he becomes conditioned by these modes.",
+    "meaning": "Understand the three modes of nature that influence our behavior.",
+    "tags": ["nature", "behavior", "modes", "influence", "psychology"]
+  },
+  {
+    "chapter": 15,
+    "shlok": 7,
+    "sanskrit": "ममैवांशो जीवलोके जीवभूतः सनातनः | मनःषष्ठानीन्द्रियाणि प्रकृतिस्थानि कर्षति ||",
+    "hindi": "इस संसार में यह जीवात्मा मेरा ही सनातन अंश है और वही इन प्रकृति में स्थित मन और पाँचों इन्द्रियों को आकर्षित करता है।",
+    "english": "The living entities in this conditioned world are My eternal fragmental parts. Due to conditioned life, they are struggling very hard with the six senses, which include the mind.",
+    "meaning": "We are parts of the Divine, struggling with our senses.",
+    "tags": ["struggle", "senses", "divine", "connection", "life"]
+  },
+  {
+    "chapter": 16,
+    "shlok": 21,
+    "sanskrit": "त्रिविधं नरकस्येदं द्वारं नाशनमात्मनः | कामः क्रोधस्तथा लोभस्तस्मादेतत्त्रयं त्यजेत् ||",
+    "hindi": "काम, क्रोध तथा लोभ—ये तीन प्रकार के नरक के द्वार आत्मा का नाश करने वाले हैं, इसलिए इन तीनों को त्याग देना चाहिए।",
+    "english": "There are three gates leading to this hell—lust, anger and greed. Every sane man should give these up, for they lead to the degradation of the soul.",
+    "meaning": "Avoid lust, anger, and greed to protect your soul.",
+    "tags": ["hell", "lust", "anger", "greed", "degradation"]
+  },
+  {
+    "chapter": 17,
+    "shlok": 3,
+    "sanskrit": "सत्त्वानुरूपा सर्वस्य श्रद्धा भवति भारत | श्रद्धामयोऽयं पुरुषो यो यच्छ्रद्धः स एव सः ||",
+    "hindi": "हे भारत! सभी मनुष्यों की श्रद्धा उनके अन्तःकरण के अनुरूप होती है। यह पुरुष श्रद्धामय है, इसलिए जो जैसी श्रद्धा वाला है, वह स्वयं भी वही है।",
+    "english": "According to one's existence under the various modes of nature, one evolves a particular kind of faith. The living being is said to be of a particular faith according to the modes he has acquired.",
+    "meaning": "Your faith defines who you are.",
+    "tags": ["faith", "identity", "character", "belief", "nature"]
+  },
+  {
+    "chapter": 18,
+    "shlok": 46,
+    "sanskrit": "यतः प्रवृत्तिर्भूतानां येन सर्वमिदं ततम् | स्वकर्मणा तमभ्यर्च्य सिद्धिं विन्दति मानवः ||",
+    "hindi": "जिस परमेश्वर से सम्पूर्ण प्राणियों की उत्पत्ति हुई है और जिससे यह समस्त जगत् व्याप्त है, उस परमेश्वर की अपने स्वाभाविक कर्मों द्वारा पूजा करके मनुष्य परम सिद्धि को प्राप्त हो जाता है।",
+    "english": "By worship of the Lord, who is the source of all beings and who is all-pervading, a man can attain perfection through performing his own work.",
+    "meaning": "Work is worship. Perfection is found in doing your own duty.",
+    "tags": ["work", "worship", "perfection", "duty", "purpose"]
+  },
+  {
+    "chapter": 18,
+    "shlok": 78,
+    "sanskrit": "यत्र योगेश्वरः कृष्णो यत्र पार्थो धनुर्धरः | तत्र श्रीर्विजयो भूतिर्ध्रुवा नीतिर्मतिर्मम ||",
+    "hindi": "जहाँ योगेश्वर कृष्ण हैं और जहाँ धनुर्धर अर्जुन हैं, वहीं श्री, विजय, विभूति और अचल नीति है—ऐसा मेरा मत है।",
+    "english": "Wherever there is Krishna, the master of all mystics, and wherever there is Arjuna, the supreme archer, there will also certainly be opulence, victory, extraordinary power, and morality. That is my opinion.",
+    "meaning": "Success and morality follow where there is divine guidance and human effort.",
+    "tags": ["victory", "success", "morality", "guidance", "effort"]
+  },
+  {
+    "chapter": 2,
+    "shlok": 3,
+    "sanskrit": "क्लैब्यं मा स्म गमः पार्थ नैतत्त्वय्युपपद्यते | क्षुद्रं हृदयदौर्बल्यं त्यक्त्वोत्तिष्ठ परन्तप ||",
+    "hindi": "हे अर्जुन! नपुंसकता को मत प्राप्त हो, यह तुझमें उचित नहीं है। हे परन्तप! हृदय की तुच्छ दुर्बलता को त्यागकर युद्ध के लिए खड़ा हो जा।",
+    "english": "O son of Prtha, do not yield to this degrading impotence. It does not befit you. Give up such petty weakness of heart and arise, O chastiser of the enemy.",
+    "meaning": "Overcome weakness and stand up for what is right.",
+    "tags": ["strength", "courage", "weakness", "action", "motivation"]
+  },
+  {
+    "chapter": 2,
+    "shlok": 48,
+    "sanskrit": "योगस्थः कुरु कर्माणि सङ्गं त्यक्त्वा धनञ्जय | सिद्ध्यसिद्ध्योः समो भूत्वा समत्वं योग उच्यते ||",
+    "hindi": "हे धनञ्जय! तू आसक्ति को त्यागकर तथा सिद्धि और असिद्धि में समान बुद्धि वाला होकर योग में स्थित हुआ कर्तव्य कर्मों को कर, समत्व ही योग कहलाता है।",
+    "english": "Perform your duty equipoised, O Arjuna, abandoning all attachment to success or failure. Such equanimity is called yoga.",
+    "meaning": "Balance in success and failure is true Yoga.",
+    "tags": ["balance", "equanimity", "yoga", "success", "failure"]
+  },
+  {
+    "chapter": 2,
+    "shlok": 56,
+    "sanskrit": "दुःखेष्वनुद्विग्नमनाः सुखेषु विगतस्पृहः | वीतरागभयक्रोधः स्थितधीर्मुनिरुच्यते ||",
+    "hindi": "दुःखों की प्राप्ति होने पर जिसके मन में उद्वेग नहीं होता, सुखों की प्राप्ति में जो सर्वथा निष्स्पृह है तथा जिसके राग, भय और क्रोध नष्ट हो गये हैं, ऐसा मुनि स्थितप्रज्ञ कहा जाता है।",
+    "english": "One who is not disturbed in mind even amidst the threefold miseries or elated when there is happiness, and who is free from attachment, fear and anger, is called a sage of steady mind.",
+    "meaning": "A steady mind is free from attachment, fear, and anger.",
+    "tags": ["peace", "anger", "fear", "steady mind", "wisdom"]
+  },
+  {
+    "chapter": 2,
+    "shlok": 70,
+    "sanskrit": "आपूर्यमाणमचलप्रतिष्ठं समुद्रमापः प्रविशन्ति यद्वत् | तद्वत्कामा यं प्रविशन्ति सर्वे स शान्तिमाप्नोति न कामकामी ||",
+    "hindi": "जैसे सब ओर से परिपूर्ण अचल प्रतिष्ठा वाले समुद्र में नाना नदियाँ समा जाती हैं, वैसे ही जिस स्थितप्रज्ञ पुरुष में सम्पूर्ण भोग किसी प्रकार का विकार उत्पन्न किये बिना ही समा जाते हैं, वही पुरुष परम शान्ति को प्राप्त होता है, भोगों को चाहने वाला नहीं।",
+    "english": "A person who is not disturbed by the incessant flow of desires—that enter like rivers into the ocean, which is ever being filled but is always still—can alone achieve peace, and not the man who strives to satisfy such desires.",
+    "meaning": "Peace comes to those who are not disturbed by desires.",
+    "tags": ["peace", "desire", "ocean", "calm", "satisfaction"]
+  },
+  {
+    "chapter": 3,
+    "shlok": 10,
+    "sanskrit": "सहयज्ञाः प्रजाः सृष्ट्वा पुरोवाच प्रजापतिः | अनेन प्रसविष्यध्वमेष वोऽस्त्विष्टकामधुक् ||",
+    "hindi": "प्रजापति ब्रह्मा ने कल्प के आदि में यज्ञ सहित प्रजाओं को रचकर उनसे कहा कि तुम लोग इस यज्ञ द्वारा वृद्धि को प्राप्त होओ और यह यज्ञ तुम लोगों को इच्छित भोग प्रदान करने वाला हो।",
+    "english": "In the beginning of creation, the Lord of all creatures sent forth generations of men and demigods, along with sacrifices for Visnu, and blessed them by saying, 'Be thou happy by this yajna [sacrifice] because its performance will bestow upon you everything desirable for living happily and achieving liberation.'",
+    "meaning": "Sacrifice and service lead to prosperity and happiness.",
+    "tags": ["creation", "sacrifice", "prosperity", "happiness", "service"]
+  },
+  {
+    "chapter": 3,
+    "shlok": 21,
+    "sanskrit": "यद्यदाचरति श्रेष्ठस्तत्तदेवेतरो जनः | स यत्प्रमाणं कुरुते लोकस्तदनुवर्तते ||",
+    "hindi": "श्रेष्ठ पुरुष जो-जो आचरण करता है, अन्य पुरुष भी वैसा-वैसा ही आचरण करते हैं। वह जो कुछ प्रमाण कर देता है, समस्त मनुष्य-समुदाय उसी के अनुसार बरतने लगता है।",
+    "english": "Whatever action a great man performs, common men follow. And whatever standards he sets by exemplary acts, all the world pursues.",
+    "meaning": "Leaders set the standard for others to follow.",
+    "tags": ["leadership", "example", "influence", "responsibility", "conduct"]
+  },
+  {
+    "chapter": 4,
+    "shlok": 8,
+    "sanskrit": "परित्राणाय साधूनां विनाशाय च दुष्कृताम् | धर्मसंस्थापनार्थाय सम्भवामि युगे युगे ||",
+    "hindi": "साधु पुरुषों का उद्धार करने के लिए, पाप कर्म करने वालों का विनाश करने के लिए और धर्म की भलीभाँति स्थापना करने के लिए मैं युग-युग में प्रकट होता हूँ।",
+    "english": "To deliver the pious and to annihilate the miscreants, as well as to reestablish the principles of religion, I Myself appear, millennium after millennium.",
+    "meaning": "The Divine appears to protect the good and establish righteousness.",
+    "tags": ["protection", "justice", "righteousness", "divine", "mission"]
+  },
+  {
+    "chapter": 4,
+    "shlok": 13,
+    "sanskrit": "चातुर्वर्ण्यं मया सृष्टं गुणकर्मविभागशः | तस्य कर्तारमपि मां विद्ध्यकर्तारमव्ययम् ||",
+    "hindi": "ब्राह्मण, क्षत्रिय, वैश्य और शूद्र—इन चार वर्णों का समूह गुण और कर्मों के विभागपूर्वक मेरे द्वारा रचा गया है। इस प्रकार उस कर्म का कर्ता होने पर भी मुझ अविनाशी परमेश्वर को तू वास्तव में अकर्ता ही जान।",
+    "english": "According to the three modes of material nature and the work associated with them, the four divisions of human society are created by Me. And although I am the creator of this system, you should know that I am yet the nondoer, being unchangeable.",
+    "meaning": "Social divisions are based on qualities and actions, not birth.",
+    "tags": ["society", "work", "qualities", "creation", "order"]
+  },
+  {
+    "chapter": 4,
+    "shlok": 39,
+    "sanskrit": "श्रद्धावॉंल्लभते ज्ञानं तत्परः संयतेन्द्रियः | ज्ञानं लब्ध्वा परां शान्तिमचिरेणाधिगच्छति ||",
+    "hindi": "जितेन्द्रिय, साधनपरायण और श्रद्धावान् मनुष्य ज्ञान को प्राप्त होता है तथा ज्ञान को प्राप्त होकर वह बिना विलम्ब के तत्काल ही भगवत्प्राप्ति रूप परम शान्ति को प्राप्त हो जाता है।",
+    "english": "A faithful man who is dedicated to transcendental knowledge and who subdues his senses is eligible to achieve such knowledge, and having achieved it he quickly attains the supreme spiritual peace.",
+    "meaning": "Faith and self-control lead to supreme peace.",
+    "tags": ["faith", "peace", "knowledge", "control", "dedication"]
+  },
+  {
+    "chapter": 5,
+    "shlok": 22,
+    "sanskrit": "ये ही संस्पर्शजा भोगा दुःखयोनय एव ते | आद्यन्तवन्तः कौन्तेय न तेषु रमते बुधः ||",
+    "hindi": "जो ये इन्द्रिय तथा विषयों के संयोग से उत्पन्न होने वाले भोग हैं, वे यद्यपि विषयी पुरुषों को सुखरूप भासते हैं, तो भी दुःख के ही हेतु हैं और आदि-अन्त वाले अर्थात् अनित्य हैं। इसलिए हे अर्जुन! बुद्धिमान् उनमें नहीं रमता।",
+    "english": "An intelligent person does not take part in the sources of misery, which are due to contact with the material senses. O son of Kunti, such pleasures have a beginning and an end, and so the wise man does not delight in them.",
+    "meaning": "Sensual pleasures are temporary and lead to misery. Seek higher joy.",
+    "tags": ["pleasure", "misery", "wisdom", "temporary", "senses"]
+  },
+  {
+    "chapter": 5,
+    "shlok": 29,
+    "sanskrit": "भोक्तारं यज्ञतपसां सर्वलोकमहेश्वरम् | सुहृदं सर्वभूतानां ज्ञात्वा मां शान्तिमृच्छति ||",
+    "hindi": "मेरा भक्त मुझको सब यज्ञ और तपों का भोगने वाला, सम्पूर्ण लोकों के ईश्वरों का भी ईश्वर तथा सम्पूर्ण भूतप्राणियों का सुहृद् अर्थात् स्वार्थरहित दयालु और प्रेमी जानकर शान्ति को प्राप्त होता है।",
+    "english": "A person in full consciousness of Me, knowing Me to be the ultimate beneficiary of all sacrifices and austerities, the Supreme Lord of all planets and demigods, and the benefactor and well-wisher of all living entities, attains peace from the pangs of material miseries.",
+    "meaning": "Knowing God as the ultimate friend and benefactor brings peace.",
+    "tags": ["peace", "friend", "god", "benefactor", "consciousness"]
+  },
+  {
+    "chapter": 6,
+    "shlok": 6,
+    "sanskrit": "बन्धुरात्मात्मनस्तस्य येनात्मैवात्मना जितः | अनात्मनस्तु शत्रुत्वे वर्तेतात्मैव शत्रुवत् ||",
+    "hindi": "जिस जीवात्मा द्वारा मन और इन्द्रियों सहित शरीर जीता हुआ है, उस जीवात्मा का तो वह आप ही मित्र है और जिसके द्वारा मन और इन्द्रियों सहित शरीर नहीं जीता गया है, उसके लिए वह आप ही शत्रु के समान शत्रुता में बरतता है।",
+    "english": "For him who has conquered the mind, the mind is the best of friends; but for one who has failed to do so, his mind will remain the greatest enemy.",
+    "meaning": "Conquer your mind to make it your best friend.",
+    "tags": ["mind", "friend", "enemy", "conquest", "self-control"]
+  },
+  {
+    "chapter": 6,
+    "shlok": 40,
+    "sanskrit": "पार्थ नैवेह नामुत्र विनाशस्तस्य विद्यते | न हि कल्याणकृत्कश्चिद्दुर्गतिं तात गच्छति ||",
+    "hindi": "हे पार्थ! उस पुरुष का न तो इस लोक में और न परलोक में ही नाश होता है क्योंकि हे प्यारे! आत्मोद्धार के लिए अर्थात् भगवत्प्राप्ति के लिए कर्म करने वाला कोई भी मनुष्य दुर्गति को नहीं प्राप्त होता।",
+    "english": "O son of Prtha, a transcendentalist engaged in auspicious activities does not meet with destruction either in this world or in the spiritual world; one who does good, My friend, is never overcome by evil.",
+    "meaning": "Good efforts are never wasted. The path of goodness is safe.",
+    "tags": ["goodness", "effort", "safety", "spiritual", "success"]
+  },
+  {
+    "chapter": 7,
+    "shlok": 7,
+    "sanskrit": "मत्तः परतरं नान्यत्किञ्चिदस्ति धनञ्जय | मयि सर्वमिदं प्रोतं सूत्रे मणिगणा इव ||",
+    "hindi": "हे धनञ्जय! मेरे सिवा दूसरा कोई भी परम कारण नहीं है। यह सम्पूर्ण जगत् सूत्र में मणियों के सदृश मुझमें पिरोया हुआ है।",
+    "english": "O conqueror of wealth, there is no truth superior to Me. Everything rests upon Me, as pearls are strung on a thread.",
+    "meaning": "The Divine is the ultimate truth connecting everything.",
+    "tags": ["truth", "connection", "divine", "unity", "god"]
+  },
+  {
+    "chapter": 7,
+    "shlok": 14,
+    "sanskrit": "दैवी ह्येषा गुणमयी मम माया दुरत्यया | मामेव ये प्रपद्यन्ते मायामेतां तरन्ति ते ||",
+    "hindi": "क्योंकि यह अलौकिक अर्थात् अति अद्भुत त्रिगुणमयी मेरी माया बड़ी दुस्तर है, परन्तु जो पुरुष केवल मुझको ही निरन्तर भजते हैं, वे इस माया को तर जाते हैं अर्थात् संसार से मुक्त हो जाते हैं।",
+    "english": "This divine energy of Mine, consisting of the three modes of material nature, is difficult to overcome. But those who have surrendered unto Me can easily cross over it.",
+    "meaning": "Surrender to the Divine to overcome the illusions of life.",
+    "tags": ["illusion", "maya", "surrender", "overcoming", "divine"]
+  },
+  {
+    "chapter": 8,
+    "shlok": 5,
+    "sanskrit": "अन्तकाले च मामेव स्मरन्मुक्त्वा कलेवरम् | यः प्रयाति स मद्भावं याति नास्त्यत्र संशयः ||",
+    "hindi": "जो पुरुष अन्तकाल में भी मुझको ही स्मरण करता हुआ शरीर को त्यागकर जाता है, वह मेरे साक्षात् स्वरूप को प्राप्त होता है—इसमें कुछ भी संशय नहीं है।",
+    "english": "And whoever, at the end of his life, quits his body remembering Me alone at once attains My nature. Of this there is no doubt.",
+    "meaning": "Final thoughts determine your destination. Remember the Divine.",
+    "tags": ["death", "memory", "destination", "divine", "certainty"]
+  },
+  {
+    "chapter": 9,
+    "shlok": 26,
+    "sanskrit": "पत्रं पुष्पं फलं तोयं यो मे भक्त्या प्रयच्छति | तदहं भक्त्युपहृतमश्नामि प्रयतात्मनः ||",
+    "hindi": "जो कोई भक्त मेरे लिए प्रेम से पत्र, पुष्प, फल, जल आदि अर्पण करता है, उस शुद्धबुद्धि निष्काम प्रेमी भक्त का प्रेमपूर्वक अर्पण किया हुआ वह पत्र-पुष्पादि मैं सगुणरूप से प्रकट होकर प्रीतिसहित खाता हूँ।",
+    "english": "If one offers Me with love and devotion a leaf, a flower, fruit or water, I will accept it.",
+    "meaning": "The Divine values the intention and love behind an offering, not its size.",
+    "tags": ["love", "devotion", "offering", "simplicity", "acceptance"]
+  },
+  {
+    "chapter": 9,
+    "shlok": 27,
+    "sanskrit": "यत्करोषि यदश्नासि यज्जुहोषि ददासि यत् | यत्तपस्यसि कौन्तेय तत्कुरुष्व मदर्पणम् ||",
+    "hindi": "हे कुन्तीपुत्र! तू जो कर्म करता है, जो खाता है, जो हवन करता है, जो दान देता है और जो तप करता है, वह सब मेरे अर्पण कर।",
+    "english": "Whatever you do, whatever you eat, whatever you offer or give away, and whatever austerities you perform—do that, O son of Kunti, as an offering unto Me.",
+    "meaning": "Dedicating every action to the Divine turns life into worship.",
+    "tags": ["dedication", "action", "worship", "offering", "life"]
+  },
+  {
+    "chapter": 11,
+    "shlok": 33,
+    "sanskrit": "तस्मात्त्वमुत्तिष्ठ यशो लभस्व जित्वा शत्रून् भुङ्क्ष्व राज्यं समृद्धम् | मयैवैते निहताः पूर्वमेव निमित्तमात्रं भव सव्यसाचिन् ||",
+    "hindi": "इसलिए तू खड़ा हो और यश प्राप्त कर तथा शत्रुओं को जीतकर धन-धान्य से सम्पन्न राज्य को भोग। ये सब शत्रु मेरे ही द्वारा पहले से मारे हुए हैं, हे सव्यसाचिन्! तू तो केवल निमित्तमात्र बन जा।",
+    "english": "Therefore get up. Prepare to fight and win glory. Conquer your enemies and enjoy a flourishing kingdom. They are already put to death by My arrangement, and you, O Savyasaci, can be but an instrument in the fight.",
+    "meaning": "Be an instrument of the Divine will. Success is already planned.",
+    "tags": ["instrument", "action", "will", "success", "courage"]
+  },
+  {
+    "chapter": 12,
+    "shlok": 15,
+    "sanskrit": "यस्मान्नोद्विजते लोको लोकान्नोद्विजते च यः | हर्षामर्षभयोद्वेगैर्मुक्तो यः स च मे प्रियः ||",
+    "hindi": "जिससे कोई भी जीव उद्वेग को प्राप्त नहीं होता और जो स्वयं भी किसी जीव से उद्वेग को प्राप्त नहीं होता तथा जो हर्ष, अमर्ष, भय और उद्वेगादि से रहित है, वह भक्त मुझको प्रिय है।",
+    "english": "He for whom no one is put into difficulty and who is not disturbed by anyone, who is freed from pleasure, anger, fear and anxiety, is very dear to Me.",
+    "meaning": "Peacefulness and not causing trouble to others are signs of a dear devotee.",
+    "tags": ["peace", "conduct", "character", "dear", "devotee"]
+  },
+  {
+    "chapter": 13,
+    "shlok": 8,
+    "sanskrit": "अमानित्वमदम्भित्वमहिंसा क्षान्तिरार्जवम् | आचार्योपासनं शौचं स्थैर्यमात्मविनिग्रहः ||",
+    "hindi": "श्रेष्ठता के अभिमान का अभाव, दम्भाचरण का अभाव, किसी भी प्राणी को किसी प्रकार भी न सताना, क्षमाभाव, मन-वाणी आदि की सरलता, श्रद्धा-भक्तिपूर्वक गुरु की सेवा, बाहर-भीतर की शुद्धि, अन्तःकरण की स्थिरता और मन-इन्द्रियों सहित शरीर का निग्रह।",
+    "english": "Humility; pridelessness; nonviolence; tolerance; simplicity; approaching a bona fide spiritual master; cleanliness; steadiness; self-control.",
+    "meaning": "Key virtues for spiritual growth: humility, non-violence, and self-control.",
+    "tags": ["virtue", "growth", "humility", "discipline", "character"]
+  },
+  {
+    "chapter": 14,
+    "shlok": 18,
+    "sanskrit": "ऊर्ध्वं गच्छन्ति सत्त्वस्था मध्ये तिष्ठन्ति राजसाः | जघन्यगुणवृत्तस्था अधो गच्छन्ति तामसाः ||",
+    "hindi": "सत्त्वगुण में स्थित पुरुष स्वर्ग आदि उच्च लोकों को जाते हैं, रजोगुण में स्थित राजस पुरुष मध्य में अर्थात् मनुष्य लोक में ही रहते हैं और तमोगुण के कार्य रूप निद्रा, प्रमाद और आलस्य आदि नीच वृत्ति में स्थित तामस पुरुष अधोगति को अर्थात् कीट, पशु आदि नीच योनियों को तथा नरकों को प्राप्त होते हैं।",
+    "english": "Those situated in the mode of goodness rise upward to the higher planets; those in the mode of passion live on the earthly planets; and those in the abominable mode of ignorance go down to the hellish worlds.",
+    "meaning": "Your dominant mode of nature determines your future path.",
+    "tags": ["modes", "future", "nature", "goodness", "passion"]
+  },
+  {
+    "chapter": 15,
+    "shlok": 15,
+    "sanskrit": "सर्वस्य चाहं हृदि सन्निविष्टो मत्तः स्मृतिर्ज्ञानमपोहनं च | वेदैश्च सर्वैरहमेव वेद्यो वेदान्तकृद्वेदविदेव चाहम् ||",
+    "hindi": "मैं ही सब प्राणियों के हृदय में स्थित हूँ, मुझसे ही स्मृति, ज्ञान और अपोहन होता है। सब वेदों द्वारा मैं ही जानने योग्य हूँ तथा वेदान्त का कर्ता और वेदों को जानने वाला भी मैं ही हूँ।",
+    "english": "I am seated in everyone's heart, and from Me come remembrance, knowledge and forgetfulness. By all the Vedas, I am to be known. Indeed, I am the compiler of Vedanta, and I am the knower of the Vedas.",
+    "meaning": "The Divine is the source of all knowledge and the goal of all study.",
+    "tags": ["knowledge", "heart", "source", "study", "divine"]
+  },
+  {
+    "chapter": 18,
+    "shlok": 47,
+    "sanskrit": "श्रेयान्स्वधर्मो विगुणः परधर्मात्स्वनुष्ठितात् | स्वभावयियतं कर्म कुर्वन्नाप्नोति किल्बिषम् ||",
+    "hindi": "अच्छी प्रकार आचरण किये हुए दूसरे के धर्म से, गुणरहित भी अपना धर्म श्रेष्ठ है क्योंकि स्वभाव से नियत किये हुए स्वधर्म रूप कर्म को करता हुआ मनुष्य पाप को नहीं प्राप्त होता।",
+    "english": "It is better to engage in one's own occupation, even though one may perform it imperfectly, than to accept another's occupation and perform it perfectly. Duties prescribed according to one's own nature are never affected by sinful reactions.",
+    "meaning": "Follow your own nature. Authenticity is better than imitation.",
+    "tags": ["authenticity", "duty", "nature", "work", "sin"]
   }
 ]

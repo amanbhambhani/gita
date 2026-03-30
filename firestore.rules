@@ -1,0 +1,99 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ===============================================================
+    // Assumed Data Model
+    // ===============================================================
+    //
+    // Collection: users
+    // Document ID: {uid} (Firebase Auth UID)
+    // Fields:
+    //   - uid: string (required, immutable) - The unique identifier for the user.
+    //   - name: string (required, size < 100) - The full name of the user.
+    //   - email: string (required, email format) - The email address of the user.
+    //   - mobile: string (required, size < 20) - The mobile number of the user.
+    //   - region: string (required, size < 50) - The region/state of the user.
+    //   - createdAt: timestamp (required, immutable) - The timestamp when the user was created.
+    //
+    // Collection: guidance
+    // Document ID: {guidanceId} (Auto-generated)
+    // Fields:
+    //   - uid: string (required, immutable) - The UID of the user who requested the guidance.
+    //   - problem: string (required, size < 1000) - The problem entered by the user.
+    //   - language: string (required, size < 50) - The language selected for the guidance.
+    //   - response: string (required, size < 5000) - The AI-generated response.
+    //   - createdAt: timestamp (required, immutable) - The timestamp when the guidance was generated.
+    //
+    // ===============================================================
+
+    // ===============================================================
+    // Helper Functions
+    // ===============================================================
+
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    function isDocOwner() {
+      return isAuthenticated() && request.auth.uid == resource.data.uid;
+    }
+
+    function isValidEmail(email) {
+      return email is string && email.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$");
+    }
+
+    function hasOnlyAllowedFields(fields) {
+      return request.resource.data.keys().hasOnly(fields);
+    }
+
+    function areImmutableFieldsUnchanged(fields) {
+      return !request.resource.data.diff(resource.data).affectedKeys().hasAny(fields);
+    }
+
+    // ===============================================================
+    // Domain Validators
+    // ===============================================================
+
+    function isValidUser(data) {
+      return hasOnlyAllowedFields(['uid', 'name', 'email', 'mobile', 'region', 'createdAt']) &&
+             data.uid == request.auth.uid &&
+             data.name is string && data.name.size() > 0 && data.name.size() < 100 &&
+             isValidEmail(data.email) &&
+             data.mobile is string && data.mobile.size() > 0 && data.mobile.size() < 20 &&
+             data.region is string && data.region.size() > 0 && data.region.size() < 50 &&
+             data.createdAt is timestamp;
+    }
+
+    function isValidGuidance(data) {
+      return hasOnlyAllowedFields(['uid', 'problem', 'language', 'response', 'createdAt']) &&
+             data.uid == request.auth.uid &&
+             data.problem is string && data.problem.size() > 0 && data.problem.size() < 1000 &&
+             data.language is string && data.language.size() > 0 && data.language.size() < 50 &&
+             data.response is string && data.response.size() > 0 && data.response.size() < 5000 &&
+             data.createdAt is timestamp;
+    }
+
+    // ===============================================================
+    // Rules
+    // ===============================================================
+
+    match /users/{userId} {
+      allow read: if isOwner(userId);
+      allow create: if isOwner(userId) && isValidUser(request.resource.data);
+      allow update: if isOwner(userId) && isValidUser(request.resource.data) && 
+                      areImmutableFieldsUnchanged(['uid', 'createdAt', 'email']);
+    }
+
+    match /guidance/{guidanceId} {
+      allow read: if isDocOwner();
+      allow create: if isAuthenticated() && isValidGuidance(request.resource.data);
+      allow update: if false; // Guidance history should be immutable
+      allow delete: if isDocOwner();
+    }
+  }
+}

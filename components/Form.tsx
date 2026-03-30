@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
-import { motion } from 'motion/react';
-import { Send, Languages } from 'lucide-react';
+'use client';
 
-interface InputBoxProps {
+import { useState } from 'react';
+import { Send, Languages } from 'lucide-react';
+import { motion } from 'motion/react';
+
+interface FormProps {
   onSubmit: (problem: string, language: string) => void;
   isLoading: boolean;
 }
 
-export default function InputBox({ onSubmit, isLoading }: InputBoxProps) {
+export default function Form({ onSubmit, isLoading }: FormProps) {
   const [problem, setProblem] = useState('');
   const [language, setLanguage] = useState('English');
 
@@ -61,11 +63,7 @@ export default function InputBox({ onSubmit, isLoading }: InputBoxProps) {
             className="w-full sm:w-auto flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg hover:shadow-blue-200 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isLoading ? (
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                className="h-5 w-5 border-2 border-white/30 border-t-white rounded-full"
-              />
+              <div className="h-5 w-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
             ) : (
               <>
                 Seek Guidance <Send className="h-4 w-4" />
