@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Form from '@/components/Form';
@@ -30,7 +31,7 @@ export default function DashboardPage() {
       }
     });
     return () => unsubscribe();
-  }, []);
+  }, [router]);
 
   const fetchHistory = async (uid: string) => {
     try {
@@ -203,7 +204,7 @@ ${language}`;
                       {item.createdAt instanceof Timestamp ? item.createdAt.toDate().toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' }) : 'Just now'}
                     </div>
                   </div>
-                  <p className="text-[#2c2c2c] font-serif text-xl font-semibold mb-4 leading-tight">" {item.problem} "</p>
+                  <p className="text-[#2c2c2c] font-serif text-xl font-semibold mb-4 leading-tight">&quot; {item.problem} &quot;</p>
                   <div className="text-[#5a5a40] text-base line-clamp-4 whitespace-pre-wrap italic opacity-80 mb-6 flex-grow">
                     {item.response}
                   </div>
@@ -234,10 +235,13 @@ ${language}`;
               >
                 <div className="relative">
                   <div className="absolute inset-0 bg-[#5a5a40] rounded-full blur-3xl opacity-10"></div>
-                  <img 
+                  <Image 
                     src="https://picsum.photos/seed/spiritual/800/800?blur=5" 
                     alt="Spiritual Background" 
-                    className="rounded-full w-80 h-80 object-cover border-8 border-white shadow-2xl"
+                    width={320}
+                    height={320}
+                    className="rounded-full object-cover border-8 border-white shadow-2xl"
+                    referrerPolicy="no-referrer"
                   />
                 </div>
                 <p className="mt-8 font-serif italic text-[#5a5a40] text-xl">Seek and you shall find...</p>

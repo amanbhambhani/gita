@@ -25,7 +25,13 @@ export default function Chat() {
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [language, setLanguage] = useState('English');
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
+
+  const languages = [
+    'English', 'Hindi', 'Hinglish', 'Bengali', 'Tamil', 'Telugu', 
+    'Marathi', 'Gujarati', 'Kannada', 'Malayalam', 'Punjabi'
+  ];
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -117,7 +123,7 @@ export default function Chat() {
     setIsLoading(true);
 
     try {
-      const guidance = await getKrishnaGuidance(input);
+      const guidance = await getKrishnaGuidance(input, language);
       const krishnaMessage: Message = {
         role: 'krishna',
         content: guidance,
@@ -162,9 +168,20 @@ export default function Chat() {
             <h2 className="font-display text-lg font-bold">
               {user ? `Guidance for ${user.displayName?.split(' ')[0]}` : "Divine Guidance"}
             </h2>
-            <p className="text-[10px] uppercase tracking-widest opacity-80">
-              {user ? "Your spiritual journey is recorded" : "Wisdom of Bhagavad Gita"}
-            </p>
+            <div className="flex items-center gap-2">
+              <p className="text-[10px] uppercase tracking-widest opacity-80">
+                {user ? "Your spiritual journey is recorded" : "Wisdom of Bhagavad Gita"}
+              </p>
+              <select 
+                value={language}
+                onChange={(e) => setLanguage(e.target.value)}
+                className="bg-white/10 text-[10px] border-none rounded px-1 py-0.5 focus:ring-0 cursor-pointer hover:bg-white/20 transition-all"
+              >
+                {languages.map(lang => (
+                  <option key={lang} value={lang} className="text-black">{lang}</option>
+                ))}
+              </select>
+            </div>
           </div>
         </div>
         <div className="flex items-center gap-2">

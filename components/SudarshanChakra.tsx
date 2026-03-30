@@ -1,42 +1,53 @@
 'use client';
 
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 
-export default function SudarshanChakra({ className = "h-12 w-12", showFinger = true }: { className?: string, showFinger?: boolean }) {
+export default function SudarshanChakra({ size = 100, className = "" }: { size?: number, className?: string }) {
   return (
-    <motion.div
-      animate={{ rotate: 360 }}
-      transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-      className={`relative flex items-center justify-center ${className}`}
-    >
-      {/* Finger-like shape at the bottom */}
-      {showFinger && (
-        <div className="absolute bottom-0 w-2 h-6 bg-[#f9f7f2] border border-[#e5e1d8] rounded-full transform translate-y-2 z-0" />
-      )}
+    <div className={`relative flex items-center justify-center ${className}`} style={{ width: size, height: size }}>
+      {/* Outer Glow */}
+      <div 
+        className="absolute inset-0 rounded-full bg-primary/20 blur-xl animate-pulse"
+      />
       
-      {/* Outer ring */}
-      <div className="absolute inset-0 border-4 border-amber-400 rounded-full opacity-30 z-10" />
-      
-      {/* The Chakra SVG */}
-      <svg
-        viewBox="0 0 100 100"
-        className="w-full h-full text-amber-500 drop-shadow-[0_0_8px_rgba(251,191,36,0.8)] z-20"
-        fill="currentColor"
+      {/* The Chakra */}
+      <motion.div
+        animate={{ rotate: 360 }}
+        transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+        className="relative w-full h-full"
       >
-        <circle cx="50" cy="50" r="8" className="text-amber-600" />
-        {[...Array(12)].map((_, i) => (
-          <path
+        {/* Main Ring */}
+        <div className="absolute inset-0 border-4 border-primary rounded-full shadow-[0_0_15px_rgba(212,175,55,0.8)]" />
+        
+        {/* Spokes */}
+        {[...Array(8)].map((_, i) => (
+          <div
             key={i}
-            d="M50 10 L55 35 L45 35 Z"
-            transform={`rotate(${i * 30} 50 50)`}
-            className="text-amber-500"
+            className="absolute top-1/2 left-1/2 w-full h-[2px] bg-primary/60"
+            style={{
+              transform: `translate(-50%, -50%) rotate(${i * 45}deg)`,
+            }}
           />
         ))}
-        <circle cx="50" cy="50" r="35" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="4 2" />
-      </svg>
-      
-      {/* Inner glow */}
-      <div className="absolute w-4 h-4 bg-white rounded-full blur-sm opacity-80" />
-    </motion.div>
+        
+        {/* Inner Ring */}
+        <div className="absolute inset-[25%] border-2 border-primary/80 rounded-full" />
+        
+        {/* Center Point */}
+        <div className="absolute inset-[45%] bg-primary rounded-full shadow-[0_0_10px_rgba(212,175,55,1)]" />
+        
+        {/* Sharp Edges (Blades) */}
+        {[...Array(16)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute top-0 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-b-[12px] border-b-primary"
+            style={{
+              transform: `rotate(${i * 22.5}deg) translateY(-4px)`,
+              transformOrigin: `center ${size / 2}px`
+            }}
+          />
+        ))}
+      </motion.div>
+    </div>
   );
 }

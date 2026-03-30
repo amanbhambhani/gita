@@ -55,7 +55,7 @@ export default function LoginPage() {
         <div className="flex flex-col items-center mb-10">
           <SudarshanChakra className="h-16 w-16 mb-4" />
           <h1 className="font-serif text-4xl font-bold text-[#5a5a40] text-center">
-            Seeker's Entry
+            Seeker&apos;s Entry
           </h1>
           <p className="text-[#8e8e8e] font-serif italic mt-2">Begin your journey of wisdom</p>
         </div>

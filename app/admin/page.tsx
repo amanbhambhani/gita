@@ -120,7 +120,7 @@ export default function AdminPanel() {
                     </div>
                   </td>
                   <td className="px-8 py-6">
-                    <p className="text-sm text-[#2c2c2c] line-clamp-2 max-w-md italic font-serif">"{record.problem}"</p>
+                    <p className="text-sm text-[#2c2c2c] line-clamp-2 max-w-md italic font-serif">&quot;{record.problem}&quot;</p>
                   </td>
                   <td className="px-8 py-6">
                     <span className="text-xs font-bold text-[#5a5a40] bg-[#f9f7f2] px-3 py-1 rounded-full uppercase tracking-widest">
