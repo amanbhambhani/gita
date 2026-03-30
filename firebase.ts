@@ -1,12 +1,35 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged, User as FirebaseUser } from 'firebase/auth';
 import { getFirestore, doc, setDoc, getDoc, collection, query, where, getDocs, onSnapshot, serverTimestamp, Timestamp, addDoc, orderBy } from 'firebase/firestore';
-import firebaseConfig from './firebase-applet-config.json';
+let firebaseConfigJSON: any = {};
+try {
+  // @ts-ignore
+  firebaseConfigJSON = require('./firebase-applet-config.json');
+} catch (e) {
+  // File might be missing in production, which is fine if env vars are set
+}
+
+// Support both JSON config and environment variables for Vercel compatibility
+const firebaseConfig = {
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY || firebaseConfigJSON?.apiKey,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN || firebaseConfigJSON?.authDomain,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID || firebaseConfigJSON?.projectId,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET || firebaseConfigJSON?.storageBucket,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID || firebaseConfigJSON?.messagingSenderId,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID || firebaseConfigJSON?.appId,
+  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID || firebaseConfigJSON?.measurementId,
+};
+
+const firestoreDatabaseId = process.env.NEXT_PUBLIC_FIREBASE_FIRESTORE_DATABASE_ID || firebaseConfigJSON?.firestoreDatabaseId;
+
+if (!firebaseConfig.apiKey && !process.env.NEXT_PUBLIC_FIREBASE_API_KEY) {
+  console.warn("Firebase configuration is missing. Please set environment variables or provide firebase-applet-config.json.");
+}
 
 // Initialize Firebase SDK
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
-export const db = getFirestore(app, firebaseConfig.firestoreDatabaseId);
+export const db = getFirestore(app, firestoreDatabaseId);
 export const googleProvider = new GoogleAuthProvider();
 
 export enum OperationType {
@@ -62,3 +85,22 @@ export function handleFirestoreError(error: unknown, operationType: OperationTyp
 
 export { signInWithPopup, signOut, onAuthStateChanged, doc, setDoc, getDoc, collection, query, where, getDocs, onSnapshot, serverTimestamp, Timestamp, addDoc, orderBy };
 export type { FirebaseUser };
+
+// Validate Connection to Firestore
+import { getDocFromServer } from 'firebase/firestore';
+
+async function testConnection() {
+  try {
+    await getDocFromServer(doc(db, 'test', 'connection'));
+    console.log("Firestore connection successful.");
+  } catch (error) {
+    if (error instanceof Error && error.message.includes('the client is offline')) {
+      console.error("Please check your Firebase configuration. The client is offline.");
+    }
+    // Skip logging for other errors, as this is simply a connection test.
+  }
+}
+
+if (typeof window !== 'undefined') {
+  testConnection();
+}

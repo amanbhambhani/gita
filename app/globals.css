@@ -1,36 +1,36 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-@layer base {
-  :root {
-    --font-sans: var(--font-sans);
-    --font-serif: var(--font-serif);
-  }
+:root {
+  --background: #fdfcf0;
+  --foreground: #2d2d2d;
+  --primary: #d4a017; /* Golden for Krishna */
+  --secondary: #5d3fd3; /* Peacock blue/purple */
+  --accent: #ff6b6b;
 }
 
-.font-serif {
-  font-family: var(--font-serif);
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', sans-serif;
 }
 
-.font-sans {
-  font-family: var(--font-sans);
+.gita-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(212, 160, 23, 0.2);
+  border-radius: 24px;
 }
 
-/* Custom scrollbar for a cleaner look */
-::-webkit-scrollbar {
-  width: 8px;
+.gita-button {
+  background-color: var(--primary);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.2s ease;
 }
 
-::-webkit-scrollbar-track {
-  background: #fdfcf8;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #e5e1d8;
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #d1cdc2;
+.gita-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(212, 160, 23, 0.3);
 }
