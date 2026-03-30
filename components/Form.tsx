@@ -24,29 +24,29 @@ export default function Form({ onSubmit, isLoading }: FormProps) {
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="w-full max-w-2xl mx-auto bg-white rounded-3xl shadow-xl shadow-blue-100 p-6 border border-blue-50"
+      className="w-full bg-white rounded-[2.5rem] shadow-2xl shadow-[#5a5a40]/5 p-10 border border-[#e5e1d8]"
     >
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className="space-y-8">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="block font-serif text-2xl font-bold text-[#5a5a40] mb-4">
             What is troubling your mind?
           </label>
           <textarea
             value={problem}
             onChange={(e) => setProblem(e.target.value)}
-            placeholder="E.g., I am feeling stressed about my career..."
-            className="w-full h-32 px-4 py-3 rounded-2xl border border-blue-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all resize-none bg-blue-50/30"
+            placeholder="Speak your heart, Arjuna..."
+            className="w-full h-40 px-6 py-5 rounded-3xl border border-[#e5e1d8] focus:ring-2 focus:ring-[#5a5a40] focus:border-transparent outline-none transition-all resize-none bg-[#fdfcf8] text-lg font-serif italic placeholder:text-[#8e8e8e]/50"
             disabled={isLoading}
           />
         </div>
         
-        <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
-          <div className="flex items-center gap-2 bg-blue-50 px-4 py-2 rounded-full border border-blue-100 w-full sm:w-auto">
-            <Languages className="h-4 w-4 text-blue-500" />
+        <div className="flex flex-col sm:flex-row gap-6 items-center justify-between">
+          <div className="flex items-center gap-3 bg-[#f9f7f2] px-6 py-3 rounded-full border border-[#e5e1d8] w-full sm:w-auto">
+            <Languages className="h-5 w-5 text-[#5a5a40]" />
             <select
               value={language}
               onChange={(e) => setLanguage(e.target.value)}
-              className="bg-transparent text-sm font-medium text-blue-700 outline-none cursor-pointer"
+              className="bg-transparent text-sm font-bold text-[#5a5a40] outline-none cursor-pointer uppercase tracking-widest"
               disabled={isLoading}
             >
               <option>English</option>
@@ -60,7 +60,7 @@ export default function Form({ onSubmit, isLoading }: FormProps) {
           <button
             type="submit"
             disabled={isLoading || !problem.trim()}
-            className="w-full sm:w-auto flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg hover:shadow-blue-200 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full sm:w-auto flex items-center justify-center gap-3 bg-[#5a5a40] text-white px-10 py-4 rounded-full font-bold hover:shadow-xl hover:shadow-[#5a5a40]/20 transition-all disabled:opacity-50 disabled:cursor-not-allowed uppercase tracking-widest text-sm"
           >
             {isLoading ? (
               <div className="h-5 w-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />

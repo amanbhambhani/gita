@@ -15,22 +15,32 @@ export default function ResponseCard({ response }: ResponseCardProps) {
     <motion.div
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
-      className="w-full max-w-3xl mx-auto mt-12 bg-white/40 backdrop-blur-xl rounded-[2rem] border border-white/60 shadow-2xl p-8 relative overflow-hidden"
+      className="w-full mt-16 bg-white rounded-[3rem] border border-[#e5e1d8] shadow-2xl p-12 relative overflow-hidden"
     >
-      <div className="absolute -top-24 -left-24 w-64 h-64 bg-blue-400/20 rounded-full blur-3xl" />
-      <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-indigo-400/20 rounded-full blur-3xl" />
+      <div className="absolute -top-32 -left-32 w-80 h-80 bg-[#5a5a40]/5 rounded-full blur-3xl" />
+      <div className="absolute -bottom-32 -right-32 w-80 h-80 bg-[#5a5a40]/5 rounded-full blur-3xl" />
       
       <div className="relative z-10">
-        <div className="flex justify-center mb-6">
-          <div className="bg-blue-100 p-3 rounded-full">
-            <Quote className="h-6 w-6 text-blue-600" />
+        <div className="flex justify-center mb-10">
+          <div className="bg-[#f9f7f2] p-5 rounded-full border border-[#e5e1d8]">
+            <Quote className="h-8 w-8 text-[#5a5a40]" />
           </div>
         </div>
         
-        <div className="whitespace-pre-wrap text-gray-800 leading-relaxed space-y-4">
+        <div className="whitespace-pre-wrap text-[#2c2c2c] leading-relaxed space-y-8 font-serif">
           {response.split('\n\n').map((section, index) => {
-            if (section.includes('Sanskrit Shlok')) return <div key={index} className="text-xl font-serif text-blue-900 bg-blue-50/50 p-4 rounded-xl border-l-4 border-blue-400">{section}</div>;
-            return <p key={index}>{section}</p>;
+            if (section.toLowerCase().includes('sanskrit') || section.includes('Shlok')) {
+              return (
+                <div key={index} className="text-2xl text-center text-[#5a5a40] bg-[#f9f7f2] p-8 rounded-[2rem] border border-[#e5e1d8] shadow-inner font-bold italic">
+                  {section}
+                </div>
+              );
+            }
+            return (
+              <div key={index} className="text-lg opacity-90 first-letter:text-4xl first-letter:font-bold first-letter:text-[#5a5a40] first-letter:mr-1">
+                {section}
+              </div>
+            );
           })}
         </div>
       </div>

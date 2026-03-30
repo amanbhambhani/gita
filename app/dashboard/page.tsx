@@ -140,13 +140,13 @@ ${language}`;
   );
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div className="flex justify-between items-center mb-12">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-16">
         <div className="text-left">
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl font-bold text-gray-900 mb-2"
+            className="font-serif text-5xl font-bold text-[#5a5a40] mb-3"
           >
             Divine Guidance
           </motion.h1>
@@ -154,7 +154,7 @@ ${language}`;
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-gray-600 italic"
+            className="text-[#8e8e8e] font-serif italic text-lg"
           >
             Radhe Radhe, {user.displayName || 'Gita Seeker'}
           </motion.p>
@@ -162,9 +162,9 @@ ${language}`;
         
         <button
           onClick={() => setShowHistory(!showHistory)}
-          className="flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-blue-100 text-blue-600 hover:bg-blue-50 transition-all shadow-sm"
+          className="flex items-center gap-2 px-6 py-3 rounded-full bg-white border border-[#e5e1d8] text-[#5a5a40] hover:bg-[#f9f7f2] transition-all shadow-sm font-medium"
         >
-          {showHistory ? <Sparkles className="h-4 w-4" /> : <History className="h-4 w-4" />}
+          {showHistory ? <Sparkles className="h-5 w-5" /> : <History className="h-5 w-5" />}
           {showHistory ? 'Seek Guidance' : 'View History'}
         </button>
       </div>
@@ -173,26 +173,32 @@ ${language}`;
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="space-y-6"
+          className="grid grid-cols-1 md:grid-cols-2 gap-8"
         >
-          <h2 className="text-2xl font-bold text-gray-800 mb-6">Your Past Guidance</h2>
+          <div className="col-span-full">
+            <h2 className="font-serif text-3xl font-bold text-[#5a5a40] mb-8">Your Past Guidance</h2>
+          </div>
           {history.length === 0 ? (
-            <div className="text-center py-12 bg-white rounded-3xl border border-blue-50 text-gray-500">
+            <div className="col-span-full text-center py-20 bg-white rounded-[2rem] border border-[#e5e1d8] text-[#8e8e8e] font-serif italic text-xl">
               No guidance history found. Start by asking a question!
             </div>
           ) : (
             history.map((item) => (
-              <div key={item.id} className="bg-white p-6 rounded-3xl border border-blue-50 shadow-sm hover:shadow-md transition-all">
-                <div className="flex justify-between items-start mb-4">
-                  <div className="text-sm font-medium text-blue-600 bg-blue-50 px-3 py-1 rounded-full">
+              <motion.div 
+                key={item.id} 
+                whileHover={{ y: -5 }}
+                className="bg-white p-8 rounded-[2rem] border border-[#e5e1d8] shadow-sm hover:shadow-md transition-all flex flex-col"
+              >
+                <div className="flex justify-between items-start mb-6">
+                  <div className="text-xs font-bold text-[#5a5a40] bg-[#f9f7f2] px-4 py-1.5 rounded-full uppercase tracking-widest">
                     {item.language}
                   </div>
-                  <div className="text-xs text-gray-400">
-                    {item.createdAt instanceof Timestamp ? item.createdAt.toDate().toLocaleDateString() : 'Just now'}
+                  <div className="text-xs text-[#8e8e8e] font-serif italic">
+                    {item.createdAt instanceof Timestamp ? item.createdAt.toDate().toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' }) : 'Just now'}
                   </div>
                 </div>
-                <p className="text-gray-700 font-medium mb-4">Q: {item.problem}</p>
-                <div className="text-gray-600 text-sm line-clamp-3 whitespace-pre-wrap">
+                <p className="text-[#2c2c2c] font-serif text-xl font-semibold mb-4 leading-tight">" {item.problem} "</p>
+                <div className="text-[#5a5a40] text-base line-clamp-4 whitespace-pre-wrap italic opacity-80 mb-6 flex-grow">
                   {item.response}
                 </div>
                 <button 
@@ -200,32 +206,37 @@ ${language}`;
                     setResponse(item.response);
                     setShowHistory(false);
                   }}
-                  className="mt-4 text-sm text-blue-600 font-semibold hover:underline"
+                  className="text-sm text-[#5a5a40] font-bold hover:underline flex items-center gap-2"
                 >
-                  View Full Guidance
+                  Read Full Guidance →
                 </button>
-              </div>
+              </motion.div>
             ))
           )}
         </motion.div>
       ) : (
-        <>
+        <div className="max-w-4xl mx-auto">
           <Form onSubmit={handleGenerate} isLoading={isLoading} />
           {response && <ResponseCard response={response} />}
           {!response && !isLoading && (
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="mt-24 flex flex-col items-center opacity-20 pointer-events-none"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1 }}
+              className="mt-32 flex flex-col items-center opacity-40 grayscale pointer-events-none"
             >
-              <img 
-                src="https://picsum.photos/seed/spiritual/800/400?blur=10" 
-                alt="Spiritual Background" 
-                className="rounded-full w-64 h-64 object-cover"
-              />
+              <div className="relative">
+                <div className="absolute inset-0 bg-[#5a5a40] rounded-full blur-3xl opacity-10"></div>
+                <img 
+                  src="https://picsum.photos/seed/spiritual/800/800?blur=5" 
+                  alt="Spiritual Background" 
+                  className="rounded-full w-80 h-80 object-cover border-8 border-white shadow-2xl"
+                />
+              </div>
+              <p className="mt-8 font-serif italic text-[#5a5a40] text-xl">Seek and you shall find...</p>
             </motion.div>
           )}
-        </>
+        </div>
       )}
     </div>
   );
