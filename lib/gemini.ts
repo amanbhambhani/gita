@@ -30,9 +30,11 @@ Your goal is to help the seeker find inner peace and clarity through the path of
 `;
 
 export async function getKrishnaGuidance(userMessage: string, language: string = 'English') {
-  if (!apiKey) return "I am currently in deep meditation. Please check back later.";
-
   try {
+    if (!apiKey) {
+      throw new Error("API Key is missing. Please set NEXT_PUBLIC_GEMINI_API_KEY in environment variables.");
+    }
+
     const response = await ai.models.generateContent({
       model: "gemini-3-flash-preview",
       contents: `User Language: ${language}\n\nSeeker says: ${userMessage}`,
@@ -47,6 +49,6 @@ export async function getKrishnaGuidance(userMessage: string, language: string =
     return response.text || "The divine silence speaks volumes, but for now, I have no words.";
   } catch (error) {
     console.error("Gemini Error:", error);
-    return "A cloud has temporarily obscured the divine sun. Please try again later.";
+    return "I am currently in deep meditation. Please ensure the sacred connection (API Key) is established in the environment variables, or try again later.";
   }
 }

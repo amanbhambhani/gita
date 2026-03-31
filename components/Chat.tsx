@@ -76,13 +76,13 @@ export default function Chat() {
             <Feather size={20} />
           </div>
           <div>
-            <h2 className="font-display text-lg font-bold">Divine Guidance</h2>
+            <h2 className="font-display text-xl font-bold tracking-tight">Divine Guidance</h2>
             <div className="flex items-center gap-2">
-              <p className="text-[10px] uppercase tracking-widest opacity-80">Wisdom of Bhagavad Gita</p>
+              <p className="text-[10px] uppercase tracking-widest opacity-80 font-ui">Wisdom of Bhagavad Gita</p>
               <select 
                 value={language}
                 onChange={(e) => setLanguage(e.target.value)}
-                className="bg-white/10 text-[10px] border-none rounded px-1 py-0.5 focus:ring-0 cursor-pointer hover:bg-white/20 transition-all"
+                className="bg-white/10 text-[10px] border-none rounded px-1 py-0.5 focus:ring-0 cursor-pointer hover:bg-white/20 transition-all font-ui"
               >
                 {languages.map(lang => (
                   <option key={lang} value={lang} className="text-black">{lang}</option>
@@ -111,16 +111,16 @@ export default function Chat() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
             >
-              <div className={`max-w-[85%] p-4 rounded-2xl shadow-sm ${
+              <div className={`max-w-[85%] p-5 rounded-2xl shadow-sm ${
                 msg.role === 'user' 
                   ? 'bg-secondary text-white rounded-tr-none' 
                   : 'bg-white border border-primary/10 text-foreground rounded-tl-none'
               }`}>
-                <div className="flex items-center gap-2 mb-2 opacity-60 text-[10px] uppercase tracking-widest font-bold">
+                <div className="flex items-center gap-2 mb-2 opacity-60 text-[11px] uppercase tracking-widest font-bold font-ui">
                   {msg.role === 'user' ? <UserIcon size={10} /> : <Feather size={10} />}
-                  {msg.role === 'user' ? 'You' : 'Krishna'}
+                  {msg.role === 'user' ? 'You' : 'Lord Krishna'}
                 </div>
-                <div className="prose prose-sm max-w-none prose-headings:text-primary prose-strong:text-primary">
+                <div className="prose prose-sm max-w-none prose-headings:text-primary prose-strong:text-primary font-sans leading-relaxed text-base">
                   <ReactMarkdown>{msg.content}</ReactMarkdown>
                 </div>
               </div>
@@ -145,7 +145,7 @@ export default function Chat() {
                   />
                 ))}
               </div>
-              <span className="text-xs text-primary/60 font-medium italic">Krishna is reflecting...</span>
+              <span className="text-xs text-primary/60 font-medium italic font-display">Krishna is reflecting...</span>
             </div>
           </motion.div>
         )}
@@ -158,7 +158,7 @@ export default function Chat() {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="Ask Lord Krishna for guidance..."
-          className="flex-1 bg-background border border-primary/20 rounded-full px-6 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all text-sm"
+          className="flex-1 bg-background border border-primary/20 rounded-full px-6 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all text-base font-sans"
           disabled={isLoading}
         />
         <button

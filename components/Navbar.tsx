@@ -38,12 +38,12 @@ export default function Navbar() {
           <div className="flex items-center">
             <Link href="/" className="flex items-center gap-3">
               <div className="relative w-12 h-12 flex items-center justify-center">
-                <SudarshanChakra className="h-10 w-10" showFinger={false} />
+                <SudarshanChakra size={48} className="h-10 w-10" showFinger={false} />
               </div>
-              <span className="font-serif text-2xl font-bold text-[#5a5a40] tracking-tight">Gita Guidance</span>
+              <span className="font-display text-2xl font-bold text-[#5a5a40] tracking-tight">Gita Guidance</span>
             </Link>
           </div>
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-6 font-ui">
             {loading ? (
               <div className="h-4 w-20 bg-[#f9f7f2] animate-pulse rounded" />
             ) : user ? (
@@ -59,7 +59,7 @@ export default function Navbar() {
                 </div>
                 <button
                   onClick={handleLogout}
-                  className="px-5 py-2 text-sm font-bold text-[#5a5a40] border-2 border-[#5a5a40] rounded-full hover:bg-[#5a5a40] hover:text-white transition-all"
+                  className="px-5 py-2 text-sm font-bold text-[#5a5a40] border-2 border-[#5a5a40] rounded-full hover:bg-[#5a5a40] hover:text-white transition-all shadow-sm"
                 >
                   Logout
                 </button>

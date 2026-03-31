@@ -1,17 +1,24 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display, JetBrains_Mono } from "next/font/google";
+import { Cormorant_Garamond, Libre_Baskerville, Montserrat, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import MusicPlayer from "@/components/MusicPlayer";
 
-const inter = Inter({
+const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-display",
+});
+
+const libreBaskerville = Libre_Baskerville({
+  subsets: ["latin"],
+  weight: ["400", "700"],
   variable: "--font-sans",
 });
 
-const playfair = Playfair_Display({
+const montserrat = Montserrat({
   subsets: ["latin"],
-  variable: "--font-display",
+  variable: "--font-ui",
 });
 
 const jetbrainsMono = JetBrains_Mono({
@@ -30,7 +37,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en" className={`${cormorant.variable} ${libreBaskerville.variable} ${montserrat.variable} ${jetbrainsMono.variable}`}>
       <body className="antialiased font-sans">
         <Navbar />
         {children}
