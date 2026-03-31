@@ -13,17 +13,31 @@
       },
       "required": ["uid", "email"]
     },
-    "chat": {
-      "title": "Chat",
-      "description": "A conversation with Lord Krishna.",
+    "guidance": {
+      "title": "Guidance",
+      "description": "A record of divine guidance sought by a user.",
       "type": "object",
       "properties": {
-        "uid": { "type": "string", "description": "The ID of the user who owns this chat." },
-        "message": { "type": "string", "description": "The user's message." },
+        "uid": { "type": "string", "description": "The ID of the user who sought guidance." },
+        "userName": { "type": "string", "description": "The name of the user." },
+        "userEmail": { "type": "string", "format": "email", "description": "The email of the user." },
+        "problem": { "type": "string", "description": "The problem described by the user." },
+        "language": { "type": "string", "description": "The language of the guidance." },
         "response": { "type": "string", "description": "Krishna's guidance." },
-        "timestamp": { "type": "string", "format": "date-time", "description": "When the message was sent." }
+        "createdAt": { "type": "string", "format": "date-time", "description": "When the guidance was sought." }
       },
-      "required": ["uid", "message", "response", "timestamp"]
+      "required": ["uid", "problem", "response", "createdAt"]
+    },
+    "audioSetting": {
+      "title": "Audio Setting",
+      "description": "Configuration for the background melody.",
+      "type": "object",
+      "properties": {
+        "url": { "type": "string", "format": "uri", "description": "The URL of the audio file." },
+        "updatedAt": { "type": "string", "format": "date-time", "description": "When the melody was last updated." },
+        "fileName": { "type": "string", "description": "The name of the uploaded file." }
+      },
+      "required": ["url", "updatedAt"]
     }
   },
   "firestore": {
@@ -31,9 +45,13 @@
       "schema": "user",
       "description": "User profiles."
     },
-    "/chats/{chatId}": {
-      "schema": "chat",
-      "description": "Chat history for each user."
+    "/guidance/{guidanceId}": {
+      "schema": "guidance",
+      "description": "Guidance history for each user."
+    },
+    "/settings/audio": {
+      "schema": "audioSetting",
+      "description": "Global background music configuration."
     }
   }
 }

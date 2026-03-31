@@ -2,10 +2,10 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { auth, db, onAuthStateChanged, FirebaseUser } from '@/firebase';
+import { auth, db, storage, onAuthStateChanged, FirebaseUser, ref, uploadBytesResumable, getDownloadURL, setDoc, doc, serverTimestamp } from '@/firebase';
 import { collection, query, orderBy, onSnapshot, Timestamp } from 'firebase/firestore';
 import { motion } from 'motion/react';
-import { Shield, Users, MessageSquare, Clock } from 'lucide-react';
+import { Shield, Users, MessageSquare, Clock, Music, Upload, CheckCircle2, AlertCircle } from 'lucide-react';
 
 interface GuidanceRecord {
   id: string;
@@ -22,6 +22,9 @@ export default function AdminPanel() {
   const [user, setUser] = useState<FirebaseUser | null>(null);
   const [loading, setLoading] = useState(true);
   const [records, setRecords] = useState<GuidanceRecord[]>([]);
+  const [uploading, setUploading] = useState(false);
+  const [uploadProgress, setUploadProgress] = useState(0);
+  const [uploadStatus, setUploadStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const router = useRouter();
 
   useEffect(() => {
@@ -51,6 +54,46 @@ export default function AdminPanel() {
     return () => unsubscribe();
   }, [user]);
 
+  const handleAudioUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    if (!file.type.startsWith('audio/')) {
+      alert('Please upload an audio file (MP3, WAV, etc.)');
+      return;
+    }
+
+    setUploading(true);
+    setUploadStatus('idle');
+    setUploadProgress(0);
+
+    const storageRef = ref(storage, `audio/divine_melody_${Date.now()}`);
+    const uploadTask = uploadBytesResumable(storageRef, file);
+
+    uploadTask.on('state_changed', 
+      (snapshot) => {
+        const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        setUploadProgress(progress);
+      }, 
+      (error) => {
+        console.error("Upload failed:", error);
+        setUploadStatus('error');
+        setUploading(false);
+      }, 
+      async () => {
+        const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
+        await setDoc(doc(db, 'settings', 'audio'), {
+          url: downloadURL,
+          updatedAt: serverTimestamp(),
+          fileName: file.name
+        });
+        setUploadStatus('success');
+        setUploading(false);
+        setTimeout(() => setUploadStatus('idle'), 5000);
+      }
+    );
+  };
+
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-[#fdfcf8]">
@@ -68,6 +111,65 @@ export default function AdminPanel() {
         <div>
           <h1 className="font-serif text-4xl font-bold text-[#5a5a40]">Admin Sanctuary</h1>
           <p className="text-[#8e8e8e] font-serif italic">Overseeing the seekers of wisdom</p>
+        </div>
+      </div>
+
+      {/* Audio Management Section */}
+      <div className="bg-white p-8 rounded-[2.5rem] border border-[#e5e1d8] shadow-sm mb-12">
+        <div className="flex items-center gap-4 mb-6">
+          <div className="p-2 bg-[#f9f7f2] rounded-xl">
+            <Music className="h-6 w-6 text-[#5a5a40]" />
+          </div>
+          <h2 className="font-serif text-2xl font-bold text-[#5a5a40]">Divine Melody Management</h2>
+        </div>
+        
+        <div className="flex flex-col md:flex-row items-center gap-8">
+          <div className="flex-1">
+            <p className="text-[#8e8e8e] mb-4">Upload a new background melody for the entire sanctuary. This will update the music for all seekers.</p>
+            <div className="flex items-center gap-4">
+              <label className="relative cursor-pointer bg-[#5a5a40] text-white px-6 py-3 rounded-full font-bold flex items-center gap-2 hover:bg-[#4a4a30] transition-colors shadow-md">
+                <Upload size={18} />
+                <span>{uploading ? 'Uploading...' : 'Upload New Audio'}</span>
+                <input 
+                  type="file" 
+                  className="hidden" 
+                  accept="audio/*"
+                  onChange={handleAudioUpload}
+                  disabled={uploading}
+                />
+              </label>
+              
+              {uploadStatus === 'success' && (
+                <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} className="flex items-center gap-2 text-green-600 font-bold">
+                  <CheckCircle2 size={18} />
+                  <span>Divine Melody Updated!</span>
+                </motion.div>
+              )}
+              
+              {uploadStatus === 'error' && (
+                <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} className="flex items-center gap-2 text-red-600 font-bold">
+                  <AlertCircle size={18} />
+                  <span>Upload Failed</span>
+                </motion.div>
+              )}
+            </div>
+          </div>
+
+          {uploading && (
+            <div className="w-full md:w-64">
+              <div className="flex justify-between text-xs font-bold text-[#5a5a40] mb-2">
+                <span>Uploading...</span>
+                <span>{Math.round(uploadProgress)}%</span>
+              </div>
+              <div className="w-full bg-[#f9f7f2] h-2 rounded-full overflow-hidden">
+                <motion.div 
+                  className="bg-[#5a5a40] h-full"
+                  initial={{ width: 0 }}
+                  animate={{ width: `${uploadProgress}%` }}
+                />
+              </div>
+            </div>
+          )}
         </div>
       </div>
 

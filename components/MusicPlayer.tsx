@@ -3,14 +3,27 @@
 import { useState, useEffect, useRef } from 'react';
 import { Music, Music2, Volume2, VolumeX } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { db, doc, onSnapshot } from '@/firebase';
 
 export default function MusicPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
+  const [musicUrl, setMusicUrl] = useState("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3");
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  // Placeholder URL - User should update this with the actual music URL
-  const musicUrl = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"; 
+  useEffect(() => {
+    // Listen for audio updates from the admin panel
+    const unsubscribe = onSnapshot(doc(db, 'settings', 'audio'), (doc) => {
+      if (doc.exists()) {
+        const data = doc.data();
+        if (data.url) {
+          setMusicUrl(data.url);
+        }
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
 
   useEffect(() => {
     if (audioRef.current) {

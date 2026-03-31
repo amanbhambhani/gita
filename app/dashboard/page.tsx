@@ -101,13 +101,24 @@ English Meaning: ${matchedShlok.english}
 Language:
 ${language}`;
 
-      const ai = new GoogleGenAI({ apiKey: process.env.NEXT_PUBLIC_GEMINI_API_KEY! });
-      const genResponse = await ai.models.generateContent({
-        model: "gemini-3-flash-preview",
-        contents: prompt,
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ 
+          message: `User Problem: ${problem}\n\nRelevant Shlok: Chapter ${matchedShlok.chapter}, Shlok ${matchedShlok.shlok}\nSanskrit: ${matchedShlok.sanskrit}\nEnglish Meaning: ${matchedShlok.english}`, 
+          language 
+        }),
       });
 
-      const text = genResponse.text;
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to generate response');
+      }
+
+      const text = data.guidance;
 
       if (text) {
         setResponse(text);
@@ -127,8 +138,6 @@ ${language}`;
         } catch (fsError) {
           handleFirestoreError(fsError, OperationType.CREATE, 'guidance');
         }
-      } else {
-        alert('Failed to generate response');
       }
     } catch (err: any) {
       console.error('Error generating response:', err);

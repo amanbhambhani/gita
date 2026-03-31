@@ -32,6 +32,11 @@ service cloud.firestore {
       return request.auth != null;
     }
 
+    function isAdmin() {
+      return isAuthenticated() && 
+             (request.auth.token.email == "aman@digitalrubix.com" && request.auth.token.email_verified == true);
+    }
+
     function isOwner(userId) {
       return isAuthenticated() && request.auth.uid == userId;
     }
@@ -67,9 +72,21 @@ service cloud.firestore {
              data.timestamp is timestamp;
     }
 
+    function isValidAudioSetting(data) {
+      return data.keys().hasAll(['url', 'updatedAt']) &&
+             isValidUrl(data.url) &&
+             data.updatedAt is timestamp &&
+             (!('fileName' in data) || (data.fileName is string && data.fileName.size() < 255));
+    }
+
     // ===============================================================
     // Rules
     // ===============================================================
+
+    match /settings/audio {
+      allow read: if true; // Everyone can hear the divine melody
+      allow write: if isAdmin() && isValidAudioSetting(request.resource.data);
+    }
 
     match /users/{userId} {
       allow read: if isOwner(userId);
@@ -79,10 +96,10 @@ service cloud.firestore {
                       request.resource.data.createdAt == resource.data.createdAt;
     }
 
-    match /chats/{chatId} {
-      allow read: if isAuthenticated() && resource.data.uid == request.auth.uid;
-      allow create: if isAuthenticated() && isValidChat(request.resource.data);
-      allow update, delete: if false; // Chats are immutable for now
+    match /guidance/{guidanceId} {
+      allow read: if (isAuthenticated() && resource.data.uid == request.auth.uid) || isAdmin();
+      allow create: if isAuthenticated() && request.resource.data.uid == request.auth.uid;
+      allow update, delete: if isAdmin();
     }
 
     // Default deny

@@ -1,6 +1,8 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged, User as FirebaseUser } from 'firebase/auth';
 import { getFirestore, doc, setDoc, getDoc, collection, query, where, getDocs, onSnapshot, serverTimestamp, Timestamp, addDoc, orderBy } from 'firebase/firestore';
+import { getStorage, ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
+
 let firebaseConfigJSON: any = {};
 try {
   // @ts-ignore
@@ -30,6 +32,7 @@ if (!firebaseConfig.apiKey && !process.env.NEXT_PUBLIC_FIREBASE_API_KEY) {
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getFirestore(app, firestoreDatabaseId);
+export const storage = getStorage(app);
 export const googleProvider = new GoogleAuthProvider();
 
 export enum OperationType {
@@ -83,7 +86,26 @@ export function handleFirestoreError(error: unknown, operationType: OperationTyp
   throw new Error(JSON.stringify(errInfo));
 }
 
-export { signInWithPopup, signOut, onAuthStateChanged, doc, setDoc, getDoc, collection, query, where, getDocs, onSnapshot, serverTimestamp, Timestamp, addDoc, orderBy };
+export { 
+  signInWithPopup, 
+  signOut, 
+  onAuthStateChanged, 
+  doc, 
+  setDoc, 
+  getDoc, 
+  collection, 
+  query, 
+  where, 
+  getDocs, 
+  onSnapshot, 
+  serverTimestamp, 
+  Timestamp, 
+  addDoc, 
+  orderBy,
+  ref,
+  uploadBytesResumable,
+  getDownloadURL
+};
 export type { FirebaseUser };
 
 // Validate Connection to Firestore
