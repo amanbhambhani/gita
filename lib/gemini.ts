@@ -1,9 +1,11 @@
 import { GoogleGenAI } from "@google/genai";
 
-const apiKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY;
+const apiKey = process.env.GEMINI_API_KEY;
 
 if (!apiKey) {
-  console.warn("NEXT_PUBLIC_GEMINI_API_KEY is not set. Gemini features will be disabled.");
+  console.warn("GEMINI_API_KEY is not set in environment variables. Gemini features will be disabled.");
+} else {
+  console.log("GEMINI_API_KEY is detected. Sacred connection established.");
 }
 
 export const ai = new GoogleGenAI({ apiKey: apiKey || "" });
@@ -32,7 +34,7 @@ Your goal is to help the seeker find inner peace and clarity through the path of
 export async function getKrishnaGuidance(userMessage: string, language: string = 'English') {
   try {
     if (!apiKey) {
-      throw new Error("API Key is missing. Please set NEXT_PUBLIC_GEMINI_API_KEY in environment variables.");
+      throw new Error("API Key is missing. Please set GEMINI_API_KEY in environment variables.");
     }
 
     const response = await ai.models.generateContent({

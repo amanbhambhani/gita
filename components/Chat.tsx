@@ -4,7 +4,6 @@ import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react';
 import { Send, User as UserIcon, Feather, MessageCircle, RefreshCw, LogIn, LogOut } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { getKrishnaGuidance } from '@/lib/gemini';
 import ReactMarkdown from 'react-markdown';
 
 interface Message {
@@ -54,15 +53,34 @@ export default function Chat() {
     setIsLoading(true);
 
     try {
-      const guidance = await getKrishnaGuidance(input, language);
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ message: input, language }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to get guidance');
+      }
+
       const krishnaMessage: Message = {
         role: 'krishna',
-        content: guidance,
+        content: data.guidance,
         timestamp: Date.now(),
       };
       setMessages((prev) => [...prev, krishnaMessage]);
     } catch (error) {
       console.error("Chat Error:", error);
+      const errorMessage: Message = {
+        role: 'krishna',
+        content: "I am currently in deep meditation. Please ensure the sacred connection (API Key) is established in the environment variables, or try again later.",
+        timestamp: Date.now(),
+      };
+      setMessages((prev) => [...prev, errorMessage]);
     } finally {
       setIsLoading(false);
     }
