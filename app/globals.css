@@ -1,36 +1,47 @@
 @import "tailwindcss";
 
-:root {
-  --background: #fdfcf0;
-  --foreground: #2d2d2d;
-  --primary: #d4a017; /* Golden for Krishna */
-  --secondary: #5d3fd3; /* Peacock blue/purple */
-  --accent: #ff6b6b;
+@theme {
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-display: var(--font-display), serif;
+  --font-mono: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  --color-primary: #f27d26;
+  --color-secondary: #5a5a40;
+  --color-accent: #00ff00;
+  --color-background: #fdfcf0;
+  --color-foreground: #1a1a1a;
 }
 
-body {
-  background-color: var(--background);
-  color: var(--foreground);
-  font-family: 'Inter', sans-serif;
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+  }
 }
 
-.gita-card {
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(212, 160, 23, 0.2);
-  border-radius: 24px;
+@layer components {
+  .gita-button {
+    @apply bg-primary text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest hover:scale-105 active:scale-95 transition-all shadow-lg hover:shadow-primary/20;
+  }
+  
+  .gita-card {
+    @apply bg-white border border-primary/10 rounded-3xl p-6 shadow-sm hover:shadow-md transition-all;
+  }
 }
 
-.gita-button {
-  background-color: var(--primary);
-  color: white;
-  padding: 12px 24px;
-  border-radius: 9999px;
-  font-weight: 600;
-  transition: all 0.2s ease;
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
 }
 
-.gita-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 20px rgba(212, 160, 23, 0.3);
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(242, 125, 38, 0.2);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(242, 125, 38, 0.4);
 }

@@ -6,7 +6,6 @@ import { Send, User as UserIcon, Sparkles, MessageCircle, RefreshCw, LogIn, LogO
 import { motion, AnimatePresence } from 'framer-motion';
 import { getKrishnaGuidance } from '@/lib/gemini';
 import ReactMarkdown from 'react-markdown';
-import { auth, db, googleProvider, signInWithPopup, signOut, onAuthStateChanged, collection, addDoc, serverTimestamp, query, where, orderBy, onSnapshot, handleFirestoreError, OperationType, FirebaseUser } from '@/firebase';
 
 interface Message {
   role: 'user' | 'krishna';
@@ -15,7 +14,6 @@ interface Message {
 }
 
 export default function Chat() {
-  const [user, setUser] = useState<FirebaseUser | null>(null);
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'krishna',
@@ -33,56 +31,6 @@ export default function Chat() {
     'Marathi', 'Gujarati', 'Kannada', 'Malayalam', 'Punjabi'
   ];
 
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
-    });
-    return () => unsubscribe();
-  }, []);
-
-  // Fetch chat history if user is logged in
-  useEffect(() => {
-    if (!user) return;
-
-    const q = query(
-      collection(db, 'chats'),
-      where('uid', '==', user.uid),
-      orderBy('timestamp', 'asc')
-    );
-
-    const unsubscribe = onSnapshot(q, (snapshot) => {
-      const history: Message[] = [];
-      snapshot.docs.forEach((doc) => {
-        const data = doc.data();
-        history.push({
-          role: 'user',
-          content: data.message,
-          timestamp: data.timestamp?.toMillis() || Date.now(),
-        });
-        history.push({
-          role: 'krishna',
-          content: data.response,
-          timestamp: data.timestamp?.toMillis() || Date.now(),
-        });
-      });
-      
-      if (history.length > 0) {
-        setMessages([
-          {
-            role: 'krishna',
-            content: "Welcome back, Partha. Our previous conversation is restored. How may I guide you further?",
-            timestamp: Date.now(),
-          },
-          ...history
-        ]);
-      }
-    }, (error) => {
-      handleFirestoreError(error, OperationType.LIST, 'chats');
-    });
-
-    return () => unsubscribe();
-  }, [user]);
-
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
@@ -90,23 +38,6 @@ export default function Chat() {
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
-
-  const handleSignIn = async () => {
-    try {
-      await signInWithPopup(auth, googleProvider);
-    } catch (error) {
-      console.error("Sign In Error:", error);
-    }
-  };
-
-  const handleSignOut = async () => {
-    try {
-      await signOut(auth);
-      setMessages([messages[0]]); // Reset to initial message
-    } catch (error) {
-      console.error("Sign Out Error:", error);
-    }
-  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -130,16 +61,6 @@ export default function Chat() {
         timestamp: Date.now(),
       };
       setMessages((prev) => [...prev, krishnaMessage]);
-
-      // Save to Firestore if user is logged in
-      if (user) {
-        await addDoc(collection(db, 'chats'), {
-          uid: user.uid,
-          message: input,
-          response: guidance,
-          timestamp: serverTimestamp(),
-        });
-      }
     } catch (error) {
       console.error("Chat Error:", error);
     } finally {
@@ -152,26 +73,12 @@ export default function Chat() {
       <div className="bg-primary p-4 flex items-center justify-between text-white">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center overflow-hidden relative">
-            {user?.photoURL ? (
-              <Image 
-                src={user.photoURL} 
-                alt="User" 
-                fill 
-                className="object-cover"
-                referrerPolicy="no-referrer"
-              />
-            ) : (
-              <Sparkles size={20} />
-            )}
+            <Sparkles size={20} />
           </div>
           <div>
-            <h2 className="font-display text-lg font-bold">
-              {user ? `Guidance for ${user.displayName?.split(' ')[0]}` : "Divine Guidance"}
-            </h2>
+            <h2 className="font-display text-lg font-bold">Divine Guidance</h2>
             <div className="flex items-center gap-2">
-              <p className="text-[10px] uppercase tracking-widest opacity-80">
-                {user ? "Your spiritual journey is recorded" : "Wisdom of Bhagavad Gita"}
-              </p>
+              <p className="text-[10px] uppercase tracking-widest opacity-80">Wisdom of Bhagavad Gita</p>
               <select 
                 value={language}
                 onChange={(e) => setLanguage(e.target.value)}
@@ -185,23 +92,6 @@ export default function Chat() {
           </div>
         </div>
         <div className="flex items-center gap-2">
-          {user ? (
-            <button 
-              onClick={handleSignOut}
-              className="p-2 hover:bg-white/10 rounded-full transition-all"
-              title="Sign Out"
-            >
-              <LogOut size={18} />
-            </button>
-          ) : (
-            <button 
-              onClick={handleSignIn}
-              className="p-2 hover:bg-white/10 rounded-full transition-all"
-              title="Sign In with Google"
-            >
-              <LogIn size={18} />
-            </button>
-          )}
           <button 
             onClick={() => setMessages([messages[0]])}
             className="p-2 hover:bg-white/10 rounded-full transition-all"
@@ -228,7 +118,7 @@ export default function Chat() {
               }`}>
                 <div className="flex items-center gap-2 mb-2 opacity-60 text-[10px] uppercase tracking-widest font-bold">
                   {msg.role === 'user' ? <UserIcon size={10} /> : <Sparkles size={10} />}
-                  {msg.role === 'user' ? (user?.displayName || 'You') : 'Krishna'}
+                  {msg.role === 'user' ? 'You' : 'Krishna'}
                 </div>
                 <div className="prose prose-sm max-w-none prose-headings:text-primary prose-strong:text-primary">
                   <ReactMarkdown>{msg.content}</ReactMarkdown>
@@ -267,7 +157,7 @@ export default function Chat() {
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder={user ? "Ask Lord Krishna for guidance..." : "Sign in to save your journey..."}
+          placeholder="Ask Lord Krishna for guidance..."
           className="flex-1 bg-background border border-primary/20 rounded-full px-6 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all text-sm"
           disabled={isLoading}
         />
@@ -279,11 +169,6 @@ export default function Chat() {
           <Send size={20} />
         </button>
       </form>
-      {!user && (
-        <div className="bg-primary/5 px-4 py-2 text-[10px] text-center text-primary font-medium uppercase tracking-widest border-t border-primary/10">
-          Sign in to preserve your divine conversations across lifetimes
-        </div>
-      )}
     </div>
   );
 }
