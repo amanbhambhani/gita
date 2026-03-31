@@ -3,6 +3,7 @@
 import Chat from '@/components/Chat';
 import SudarshanChakra from '@/components/SudarshanChakra';
 import ShlokaBanner from '@/components/ShlokaBanner';
+import PeacockFeather from '@/components/PeacockFeather';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
@@ -10,6 +11,7 @@ import { ArrowLeft } from 'lucide-react';
 export default function ChatPage() {
   return (
     <main className="min-h-screen bg-[#fdfcf0] flex flex-col items-center py-12 px-6 relative overflow-hidden">
+      <PeacockFeather />
       {/* Decorative Background */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden -z-10 opacity-20">
         <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary rounded-full blur-[120px]" />

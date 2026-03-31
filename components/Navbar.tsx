@@ -40,7 +40,7 @@ export default function Navbar() {
               <div className="relative w-12 h-12 flex items-center justify-center">
                 <SudarshanChakra className="h-10 w-10" showFinger={false} />
               </div>
-              <span className="font-serif text-2xl font-bold text-[#5a5a40] tracking-tight">Gita AI</span>
+              <span className="font-serif text-2xl font-bold text-[#5a5a40] tracking-tight">Gita Guidance</span>
             </Link>
           </div>
           <div className="flex items-center gap-6">

@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react';
-import { Send, User as UserIcon, Sparkles, MessageCircle, RefreshCw, LogIn, LogOut } from 'lucide-react';
+import { Send, User as UserIcon, Feather, MessageCircle, RefreshCw, LogIn, LogOut } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { getKrishnaGuidance } from '@/lib/gemini';
 import ReactMarkdown from 'react-markdown';
@@ -73,7 +73,7 @@ export default function Chat() {
       <div className="bg-primary p-4 flex items-center justify-between text-white">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center overflow-hidden relative">
-            <Sparkles size={20} />
+            <Feather size={20} />
           </div>
           <div>
             <h2 className="font-display text-lg font-bold">Divine Guidance</h2>
@@ -117,7 +117,7 @@ export default function Chat() {
                   : 'bg-white border border-primary/10 text-foreground rounded-tl-none'
               }`}>
                 <div className="flex items-center gap-2 mb-2 opacity-60 text-[10px] uppercase tracking-widest font-bold">
-                  {msg.role === 'user' ? <UserIcon size={10} /> : <Sparkles size={10} />}
+                  {msg.role === 'user' ? <UserIcon size={10} /> : <Feather size={10} />}
                   {msg.role === 'user' ? 'You' : 'Krishna'}
                 </div>
                 <div className="prose prose-sm max-w-none prose-headings:text-primary prose-strong:text-primary">

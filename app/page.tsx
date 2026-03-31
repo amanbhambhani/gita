@@ -2,13 +2,15 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { Sparkles, Book, Heart, Compass, ArrowRight } from 'lucide-react';
+import { Book, Heart, Compass, ArrowRight, Feather } from 'lucide-react';
 import SudarshanChakra from '@/components/SudarshanChakra';
+import PeacockFeather from '@/components/PeacockFeather';
 import Link from 'next/link';
 
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col items-center justify-center p-6 md:p-12 bg-[#fdfcf0] relative overflow-hidden">
+      <PeacockFeather />
       {/* Background Decorative Elements */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
         <motion.div
@@ -33,7 +35,7 @@ export default function Home() {
             className="space-y-4"
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-widest">
-              <Sparkles size={14} />
+              <Feather size={14} />
               <span>Divine Wisdom Awaits</span>
             </div>
             <h1 className="font-display text-5xl md:text-7xl font-black text-foreground leading-tight">
@@ -55,7 +57,7 @@ export default function Home() {
               { icon: Book, title: "Eternal Wisdom", desc: "Based on 700 verses" },
               { icon: Compass, title: "Life Direction", desc: "Clear path forward" },
               { icon: Heart, title: "Inner Peace", desc: "Calm your restless mind" },
-              { icon: Sparkles, title: "Divine Dialogue", desc: "Talk to Lord Krishna" },
+              { icon: Feather, title: "Divine Dialogue", desc: "Talk to Lord Krishna" },
             ].map((feature, i) => (
               <div key={i} className="p-4 rounded-2xl bg-white/50 border border-primary/10 hover:border-primary/30 transition-all group">
                 <feature.icon className="text-primary mb-2 group-hover:scale-110 transition-all" size={24} />
@@ -107,13 +109,13 @@ export default function Home() {
             <SudarshanChakra size={400} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-40" />
             
             {/* Krishna Visual */}
-            <div className="absolute inset-0 flex items-center justify-center p-12">
-              <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-primary shadow-2xl">
+            <div className="absolute inset-0 flex items-center justify-center p-8">
+              <div className="relative w-full h-full rounded-full overflow-hidden border-8 border-primary/20 shadow-2xl">
                 <Image 
-                  src="https://picsum.photos/seed/krishna-divine/800/800" 
-                  alt="Lord Krishna" 
+                  src="https://picsum.photos/seed/krishna-standing-divine/1000/1000" 
+                  alt="Lord Krishna Standing" 
                   fill
-                  className="object-cover"
+                  className="object-cover scale-110"
                   referrerPolicy="no-referrer"
                 />
               </div>

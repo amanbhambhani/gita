@@ -22,6 +22,18 @@ const shlokas = [
     transliteration: "Yada yada hi dharmasya glanir bhavati bharata",
     translation: "Whenever there is a decline in righteousness and a rise in unrighteousness, O Bharat, then I manifest Myself.",
     reference: "Chapter 4, Verse 7"
+  },
+  {
+    sanskrit: "नैनं छिन्दन्ति शस्त्राणि नैनं दहति पावकः।",
+    transliteration: "Nainam chhindanti shastrani nainam dahati pavakah",
+    translation: "The soul can never be cut to pieces by any weapon, nor burned by fire, nor moistened by water, nor withered by the wind.",
+    reference: "Chapter 2, Verse 23"
+  },
+  {
+    sanskrit: "श्रद्धावाँल्लभते ज्ञानं तत्पर: संयतेन्द्रिय:।",
+    transliteration: "Shraddhavan labhate jnanam tat-parah samyatendriyah",
+    translation: "A faithful man who is dedicated to transcendental knowledge and who subdues his senses is eligible to achieve such knowledge.",
+    reference: "Chapter 4, Verse 39"
   }
 ];
 

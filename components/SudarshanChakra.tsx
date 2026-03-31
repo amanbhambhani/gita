@@ -5,9 +5,10 @@ import { motion } from 'framer-motion';
 interface SudarshanChakraProps {
   size?: number;
   className?: string;
+  showFinger?: boolean;
 }
 
-export default function SudarshanChakra({ size = 200, className = "" }: SudarshanChakraProps) {
+export default function SudarshanChakra({ size = 200, className = "", showFinger = false }: SudarshanChakraProps) {
   return (
     <motion.div
       animate={{ rotate: 360 }}
